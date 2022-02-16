@@ -27,7 +27,7 @@ export const Category = ({ categories, category, selectCategory }) => {
         margin: `0 -${rhythm(3 / 4)}`,
       }}
     >
-      <Item title={'All'} selectedCategory={category} onClick={selectCategory} scrollToCenter={scrollToCenter} />
+      <Item title={'Wszystkie'} selectedCategory={category} onClick={selectCategory} scrollToCenter={scrollToCenter} />
       {categories.map((title, idx) => (
         <Item
           key={idx}

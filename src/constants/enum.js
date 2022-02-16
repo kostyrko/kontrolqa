@@ -1,5 +1,5 @@
 export const CATEGORY_TYPE = {
-  ALL: 'All',
+  ALL: 'Wszystkie',
 }
 
 export const THEME = {
