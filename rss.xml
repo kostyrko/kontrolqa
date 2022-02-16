@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kontrolqa]]></title><description><![CDATA[Blog z treścią QA]]></description><link>https://kostyrko.github.io/kontrolqa</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 14 Feb 2022 15:52:34 GMT</lastBuildDate><item><title><![CDATA[Category Test1]]></title><description><![CDATA[Test1]]></description><link>https://kostyrko.github.io/kontrolqa/category1/test1/</link><guid isPermaLink="false">https://kostyrko.github.io/kontrolqa/category1/test1/</guid><pubDate>Thu, 02 Jul 2020 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Test1&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Test1]]></title><description><![CDATA[Test1]]></description><link>https://kostyrko.github.io/kontrolqa/essay/test1/</link><guid isPermaLink="false">https://kostyrko.github.io/kontrolqa/essay/test1/</guid><pubDate>Sun, 14 Jun 2020 16:21:13 GMT</pubDate><content:encoded>&lt;p&gt;Test1&lt;/p&gt;</content:encoded></item><item><title><![CDATA[about]]></title><description><![CDATA[Your name Thank you for reading my resume. If you want to contact me, Please send me an email.]]></description><link>https://kostyrko.github.io/kontrolqa/resume-en/</link><guid isPermaLink="false">https://kostyrko.github.io/kontrolqa/resume-en/</guid><pubDate>Sun, 27 Jan 2019 16:21:13 GMT</pubDate><content:encoded>&lt;h1 id=&quot;your-name&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#your-name&quot; aria-label=&quot;your name permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Your name&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Kontrolqa]]></title><description><![CDATA[Blog z treścią QA]]></description><link>https://kostyrko.github.io/kontrolqa</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 16 Feb 2022 21:03:07 GMT</lastBuildDate><item><title><![CDATA[Cypress - Page Objects]]></title><description><![CDATA[cypress Page objects Page object pattern - główne założenia: wprowadzenie modułowości w testach -> skupienie logiki testu w jednym miejscu a…]]></description><link>https://kostyrko.github.io/kontrolqa/cypress/cypress_16022022/</link><guid isPermaLink="false">https://kostyrko.github.io/kontrolqa/cypress/cypress_16022022/</guid><pubDate>Wed, 16 Feb 2022 09:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;https://www.cypress.io/static/cypress-io-logo-social-share-8fb8a1db3cdc0b289fad927694ecb415.png&quot; alt=&quot;cypress&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;page-objects&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#page-objects&quot; aria-label=&quot;page objects permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Page objects&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Page object pattern&lt;/strong&gt; - główne założenia: wprowadzenie modułowości w testach -&gt; skupienie logiki testu w jednym miejscu a w innym stworzenie samego testu.
+👉 pozwala na ograniczenie używania selektorów w testach (✌️ pozytywnie wpływa na czytelność kodu)
+🤌 niewielkie zmiany dokonane w testowanej aplikacji powinny mieć wpływ na zmianę Page Objectu, unikając zmian w kodzie testu (🤜 testy prostsze w utrzymaniu).&lt;/p&gt;
+&lt;p&gt;Podsumowując&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;wprowadza dodatkową abstrakcję dla interakcji z UI&lt;/li&gt;
+&lt;li&gt;zawiera szczegóły struktury UI strony oraz (części) jej funkcjonalności w jednej klasie/obiekcie&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Page objecty przechowujemy w dedykowanym folderze (np. pageObjects) znajdującym się po za folderem ‘integrations’ jak reszta plików z kodem testowym.&lt;/p&gt;
+&lt;h4 id=&quot;1-page-object-oparty-na-klasie&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-page-object-oparty-na-klasie&quot; aria-label=&quot;1 page object oparty na klasie permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Page object oparty na klasie&lt;/h4&gt;
+&lt;p&gt;Przyjęte jest, że Page Objecty tworzone są na podstawie klasy / w przypadku Cypressa nie jest to jedank konieczne (o czym mowa poniżej).&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;export class CreditsPgObj {
+    getCreditsCheckbox() {
+        cy.get(&apos;[data-cy=&quot;creditBox&quot;]&apos;)
+    }
+
+    static getCreditsInfo() {
+        cy.get(&apos;[data-cy=&quot;creditsInfo&quot;]&apos;)
+    }
+
+    [...]
+}
+
+export class ThanksCreditsPg {
+    getProviderName() {
+        return cy.get(&apos;[data-cy=&quot;providerName&quot;]&apos;)
+    }
+
+    static getTransactionId() {
+        return cy.get(&apos;[data-cy=&quot;transactionId&quot;]&apos;)
+    }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Zastosowanie&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;/// &amp;lt;reference types=&quot;cypress&quot; /&gt;
+import { viewports } from &apos;../../support/main&apos;
+// zaimportowanie klasy obiektu
+import { CreditsPage } from &apos;../../support/credits&apos;
+
+viewports.forEach(viewport =&gt; {
+describe(`Bonus credits management - (${viewport})`, () =&gt; {
+    // stworzenie nowej instancji klasy page obiektu
+    const creditsPage = new CreditsPgObj()
+    beforeEach(() =&gt; {
+        cy.viewport(viewport)
+        cy.visit(&apos;&apos;).wait(&apos;@xyz&apos;).wait(&apos;@yz&apos;).wait(&apos;@zx&apos;)
+    })
+
+    it(&apos;Bonus credits offer should be displayed&apos;)
+    () =&gt; {
+        CreditsPage.getLimitedTimeOffer().should(&apos;be.visible&apos;)
+        CreditsPage.getCreditsProductBonus().should(&apos;be.visible&apos;)
+        CreditsPage.getCreditsProductBonus().first().should(&apos;include.text&apos;, &apos;100 Credits&apos;)
+    },
+    )
+})
+})&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;2-page-object-oparty-na-obiekcie&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-page-object-oparty-na-obiekcie&quot; aria-label=&quot;2 page object oparty na obiekcie permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Page object oparty na obiekcie&lt;/h4&gt;
+&lt;p&gt;W przypadku Cypressa, nie ma potrzeby tworzenia Page Objectów jako klas, a także tworzenia ich instancji ponieważ te nie wymagaj  prototypów innych klas i same nimi być nie muszą - zamiast tego Page Objecty mogą składać się nawet z pojedynczych funkcji lub dla porządku mogą one być zebrane w ramach obiektu.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;export const menuPage = {
+    menuOpen: () =&gt; {
+        cy.get(menuSelectors.openMenuBtn).click();
+    },
+    menuClose: () =&gt; {
+        cy.get(menuSelectors.closMenuBtn).click().should(&apos;not.be.visible&apos;);
+    },
+    logOut: () =&gt; {
+            cy.get(menuSelectors.menuItems.logout).click();
+            cy.url().should(&apos;include&apos;, &apos;/login&apos;);
+        },
+};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4 id=&quot;3-sposób-na-podział-logiki-w-page-objecty-model-pom&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-spos%C3%B3b-na-podzia%C5%82-logiki-w-page-objecty-model-pom&quot; aria-label=&quot;3 sposób na podział logiki w page objecty model pom permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Sposób na podział logiki w Page Objecty Model (POM)&lt;/h4&gt;
+&lt;p&gt; Swego czasu tutaj: &lt;a href=&quot;https://kostyrko.github.io/zfrontu/testing-good-practices.html&quot;&gt;Dobre zasady testowania&lt;/a&gt; pisałem, że dobry układ testu tj 3xA (Arrange/aranżacja, Act/działanie, Assert/sprawdzanie) - jak to się odnosi do tzw POM? Ja to rozumiem w sposób następujący - PageObject jest odpowiedzialny za interakcję ze stroną (przechowuje akcje, które są powtarzane w tekście) - jednak sama asercja (sprawdzenie poprawności wykonania się akcji) powinna znajdować się wewnątrz testu. Przygotowanie testu odbywać się może w różnych miejscach i na różne sposoby (pomijając przygotowanie środowiska-&gt; cy.visit/cy.intercept czy localStorage, które mogą się znaleźć np. w beforeEach) ale skupiać w sobie będzie zebranie selektorów (w osobnej klasie bądź obiekcie), które następnie będą wykorzystane zarówno w ramach testu jak i w Page Object.&lt;/p&gt;
+&lt;p&gt;Scenariusz testowy w kontekście testowania aplikacji blogowej może przedstawiać się w sposób następujący: logujemy się, przechodzimy do sekcji z nowymi artykułami, tworzymy treść nowego artykuły, postujemy go - a następnie sprawdzamy czy artykuł został dodany/opublikowany.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Często spotykane podejście (podejście liniowe)&lt;/strong&gt; =&gt; 1. Zebranie selektorów w obiekcie (w którym przechowywany jest PageObject), 2. wykorzystanie PageObjectu min. do cy.get() + funkcjonalność 3. wykorzystanie w tekście getterów z PageObjectu do tworzenia asercji.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;const SELECTORS = {
+    ACCEPT_BUTTON: &quot;#accept-cookies&quot;,
+    REJECT_BUTTON: &quot;#reject-cookies&quot;,
+    LOCALSTORAGE_DISABLED_WARNING: &quot;#localstorage-disabled-warning&quot;,
+};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Alternatywne podejście: rozbicie logiki na 3 klasy/obiekty/części (podejście funkcjonalne)&lt;/strong&gt; =&gt; 1. przechowuje gettery = cy.get() + selektory 2. akcje/funkcjonalność (wykorzystuje logikę 1.) 3. test (tu wykorzystywana jest logika z 1. 2.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    const getSubmitSearchButton = () =&gt; cy.get(&apos;[cypress-id]=submit-search&apos;);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Powyżej przedstawiony jest przypadek pojedynczej funkcji, ale te (jak zauważyłem powyżej mogą być również zebrane w obiektach)&lt;/p&gt;
+&lt;p&gt;wykorzystując &lt;a href=&quot;https://anton-kravchenko.github.io/cypress-selectors/&quot;&gt;cypress-selectors&lt;/a&gt; zapis może wyglądać następująco:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;    @ByType(&apos;input&apos;) static searchInput: Selector;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Przykładowe zastosowanie&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;it(&apos;change language between different languages&apos;, () =&gt; {
+    Object.keys(i18nextLngs).forEach((language) =&gt; {
+        cy.wrap(footerPage.changeLanguage(language)).then(() =&gt;
+            expect(localStorage.getItem(&apos;i18nextLng&apos;)).to.eq(i18nextLngs[language])
+        );
+    });
+});&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;gdzie footerPage.js (w tym przypadku selektory przetrzymywane są w osobnym pliku oraz obiekcie ‘footerSelectors’ choć nie w postaci getterów a jedynie selektorów - zatem realizowane jest podejście liniowe):&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;import { footerSelectors } from &apos;../support/selectors/footerSelectors&apos;;
+
+const i18nextLngs = {
+    en: &apos;en&apos;,
+    pl: &apos;pl&apos;,
+};
+
+export const footerPage = {
+    changeLanguage: (language) =&gt; {
+        cy.get(footerSelectors.languageBtn).click({ waitForAnimations: false });
+        cy.get(footerSelectors.languageOption)
+        .contains(language[0].toUpperCase() + language.substring(1))
+        .click({ waitForAnimations: false });
+    },
+};&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;Źródła:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/geekculture/using-pageobject-pattern-with-cypress-6d9907850522&quot;&gt;Using PageObject pattern with Cypress&lt;/a&gt; =&gt; &lt;a href=&quot;https://github.com/anton-kravchenko/cypress-page-object-example&quot;&gt;anton-kravchenko/cypress-page-object-example&lt;/a&gt; =&gt; &lt;a href=&quot;https://anton-kravchenko.github.io/cypress-selectors/&quot;&gt;cypress-selectors&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=bC9bGHDgpQk&amp;#x26;list=PLYDwWPRvXB8-8LG2hZv25HO6C3w_vezZb&amp;#x26;index=15&quot;&gt;CYPRESS Page Object Model EXAMPLE | POM in CYPRESS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/&quot;&gt;Stop using Page Objects and Start using App Actions&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[about]]></title><description><![CDATA[Your name Thank you for reading my resume. If you want to contact me, Please send me an email.]]></description><link>https://kostyrko.github.io/kontrolqa/resume-en/</link><guid isPermaLink="false">https://kostyrko.github.io/kontrolqa/resume-en/</guid><pubDate>Sun, 27 Jan 2019 16:21:13 GMT</pubDate><content:encoded>&lt;h1 id=&quot;your-name&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#your-name&quot; aria-label=&quot;your name permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Your name&lt;/h1&gt;
 &lt;div align=&quot;center&quot;&gt;
 &lt;p&gt;&lt;em&gt;Thank you for reading my resume. If you want to contact me, Please send me an email.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;</content:encoded></item></channel></rss>
