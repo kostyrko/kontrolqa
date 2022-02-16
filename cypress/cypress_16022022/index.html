@@ -80,103 +80,103 @@
 <p>Page objecty przechowujemy w dedykowanym folderze (np. pageObjects) znajdującym się po za folderem ‘integrations’ jak reszta plików z kodem testowym.</p>
 <h4 id="1-page-object-oparty-na-klasie" style="position:relative;"><a href="#1-page-object-oparty-na-klasie" aria-label="1 page object oparty na klasie permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Page object oparty na klasie</h4>
 <p>Przyjęte jest, że Page Objecty tworzone są na podstawie klasy / w przypadku Cypressa nie jest to jedank konieczne (o czym mowa poniżej).</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">export class CreditsPgObj {
-    getCreditsCheckbox() {
-        cy.get('[data-cy="creditBox"]')
-    }
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">CreditsPgObj</span> <span class="token punctuation">{</span>
+    <span class="token function">getCreditsCheckbox</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'[data-cy="creditBox"]'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-    static getCreditsInfo() {
-        cy.get('[data-cy="creditsInfo"]')
-    }
+    <span class="token keyword">static</span> <span class="token function">getCreditsInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'[data-cy="creditsInfo"]'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-    [...]
-}
+    <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 
-export class ThanksCreditsPg {
-    getProviderName() {
-        return cy.get('[data-cy="providerName"]')
-    }
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">ThanksCreditsPg</span> <span class="token punctuation">{</span>
+    <span class="token function">getProviderName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'[data-cy="providerName"]'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
 
-    static getTransactionId() {
-        return cy.get('[data-cy="transactionId"]')
-    }
-}</code></pre></div>
+    <span class="token keyword">static</span> <span class="token function">getTransactionId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'[data-cy="transactionId"]'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
 <p><strong>Zastosowanie</strong></p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">/// &lt;reference types="cypress" />
-import { viewports } from '../../support/main'
-// zaimportowanie klasy obiektu
-import { CreditsPage } from '../../support/credits'
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">/// &lt;reference types="cypress" /></span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> viewports <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../../support/main'</span>
+<span class="token comment">// zaimportowanie klasy obiektu</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> CreditsPage <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../../support/credits'</span>
 
-viewports.forEach(viewport => {
-describe(`Bonus credits management - (${viewport})`, () => {
-    // stworzenie nowej instancji klasy page obiektu
-    const creditsPage = new CreditsPgObj()
-    beforeEach(() => {
-        cy.viewport(viewport)
-        cy.visit('').wait('@xyz').wait('@yz').wait('@zx')
-    })
+viewports<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">viewport</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bonus credits management - (</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>viewport<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token comment">// stworzenie nowej instancji klasy page obiektu</span>
+    <span class="token keyword">const</span> creditsPage <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CreditsPgObj</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">viewport</span><span class="token punctuation">(</span>viewport<span class="token punctuation">)</span>
+        cy<span class="token punctuation">.</span><span class="token function">visit</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token string">'@xyz'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token string">'@yz'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token string">'@zx'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-    it('Bonus credits offer should be displayed')
-    () => {
-        CreditsPage.getLimitedTimeOffer().should('be.visible')
-        CreditsPage.getCreditsProductBonus().should('be.visible')
-        CreditsPage.getCreditsProductBonus().first().should('include.text', '100 Credits')
-    },
-    )
-})
-})</code></pre></div>
+    <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'Bonus credits offer should be displayed'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        CreditsPage<span class="token punctuation">.</span><span class="token function">getLimitedTimeOffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'be.visible'</span><span class="token punctuation">)</span>
+        CreditsPage<span class="token punctuation">.</span><span class="token function">getCreditsProductBonus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'be.visible'</span><span class="token punctuation">)</span>
+        CreditsPage<span class="token punctuation">.</span><span class="token function">getCreditsProductBonus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'include.text'</span><span class="token punctuation">,</span> <span class="token string">'100 Credits'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></div>
 <h4 id="2-page-object-oparty-na-obiekcie" style="position:relative;"><a href="#2-page-object-oparty-na-obiekcie" aria-label="2 page object oparty na obiekcie permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Page object oparty na obiekcie</h4>
 <p>W przypadku Cypressa, nie ma potrzeby tworzenia Page Objectów jako klas, a także tworzenia ich instancji ponieważ te nie wymagaj  prototypów innych klas i same nimi być nie muszą - zamiast tego Page Objecty mogą składać się nawet z pojedynczych funkcji lub dla porządku mogą one być zebrane w ramach obiektu.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">export const menuPage = {
-    menuOpen: () => {
-        cy.get(menuSelectors.openMenuBtn).click();
-    },
-    menuClose: () => {
-        cy.get(menuSelectors.closMenuBtn).click().should('not.be.visible');
-    },
-    logOut: () => {
-            cy.get(menuSelectors.menuItems.logout).click();
-            cy.url().should('include', '/login');
-        },
-};</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">const</span> menuPage <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">menuOpen</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>menuSelectors<span class="token punctuation">.</span>openMenuBtn<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">menuClose</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>menuSelectors<span class="token punctuation">.</span>closMenuBtn<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'not.be.visible'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">logOut</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>menuSelectors<span class="token punctuation">.</span>menuItems<span class="token punctuation">.</span>logout<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            cy<span class="token punctuation">.</span><span class="token function">url</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">should</span><span class="token punctuation">(</span><span class="token string">'include'</span><span class="token punctuation">,</span> <span class="token string">'/login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <h4 id="3-sposób-na-podział-logiki-w-page-objecty-model-pom" style="position:relative;"><a href="#3-spos%C3%B3b-na-podzia%C5%82-logiki-w-page-objecty-model-pom" aria-label="3 sposób na podział logiki w page objecty model pom permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Sposób na podział logiki w Page Objecty Model (POM)</h4>
 <p> Swego czasu tutaj: <a href="https://kostyrko.github.io/zfrontu/testing-good-practices.html">Dobre zasady testowania</a> pisałem, że dobry układ testu tj 3xA (Arrange/aranżacja, Act/działanie, Assert/sprawdzanie) - jak to się odnosi do tzw POM? Ja to rozumiem w sposób następujący - PageObject jest odpowiedzialny za interakcję ze stroną (przechowuje akcje, które są powtarzane w tekście) - jednak sama asercja (sprawdzenie poprawności wykonania się akcji) powinna znajdować się wewnątrz testu. Przygotowanie testu odbywać się może w różnych miejscach i na różne sposoby (pomijając przygotowanie środowiska-> cy.visit/cy.intercept czy localStorage, które mogą się znaleźć np. w beforeEach) ale skupiać w sobie będzie zebranie selektorów (w osobnej klasie bądź obiekcie), które następnie będą wykorzystane zarówno w ramach testu jak i w Page Object.</p>
 <p>Scenariusz testowy w kontekście testowania aplikacji blogowej może przedstawiać się w sposób następujący: logujemy się, przechodzimy do sekcji z nowymi artykułami, tworzymy treść nowego artykuły, postujemy go - a następnie sprawdzamy czy artykuł został dodany/opublikowany.</p>
 <p><strong>Często spotykane podejście (podejście liniowe)</strong> => 1. Zebranie selektorów w obiekcie (w którym przechowywany jest PageObject), 2. wykorzystanie PageObjectu min. do cy.get() + funkcjonalność 3. wykorzystanie w tekście getterów z PageObjectu do tworzenia asercji.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">const SELECTORS = {
-    ACCEPT_BUTTON: "#accept-cookies",
-    REJECT_BUTTON: "#reject-cookies",
-    LOCALSTORAGE_DISABLED_WARNING: "#localstorage-disabled-warning",
-};</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token constant">SELECTORS</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token constant">ACCEPT_BUTTON</span><span class="token operator">:</span> <span class="token string">"#accept-cookies"</span><span class="token punctuation">,</span>
+    <span class="token constant">REJECT_BUTTON</span><span class="token operator">:</span> <span class="token string">"#reject-cookies"</span><span class="token punctuation">,</span>
+    <span class="token constant">LOCALSTORAGE_DISABLED_WARNING</span><span class="token operator">:</span> <span class="token string">"#localstorage-disabled-warning"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <p><strong>Alternatywne podejście: rozbicie logiki na 3 klasy/obiekty/części (podejście funkcjonalne)</strong> => 1. przechowuje gettery = cy.get() + selektory 2. akcje/funkcjonalność (wykorzystuje logikę 1.) 3. test (tu wykorzystywana jest logika z 1. 2.)</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">    const getSubmitSearchButton = () => cy.get('[cypress-id]=submit-search');</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> <span class="token function-variable function">getSubmitSearchButton</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'[cypress-id]=submit-search'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>Powyżej przedstawiony jest przypadek pojedynczej funkcji, ale te (jak zauważyłem powyżej mogą być również zebrane w obiektach)</p>
 <p>wykorzystując <a href="https://anton-kravchenko.github.io/cypress-selectors/">cypress-selectors</a> zapis może wyglądać następująco:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">    @ByType('input') static searchInput: Selector;</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">@<span class="token function">ByType</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span> <span class="token keyword">static</span> searchInput<span class="token operator">:</span> Selector<span class="token punctuation">;</span></code></pre></div>
 <p>Przykładowe zastosowanie</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">it('change language between different languages', () => {
-    Object.keys(i18nextLngs).forEach((language) => {
-        cy.wrap(footerPage.changeLanguage(language)).then(() =>
-            expect(localStorage.getItem('i18nextLng')).to.eq(i18nextLngs[language])
-        );
-    });
-});</code></pre></div>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'change language between different languages'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>i18nextLngs<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">language</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">wrap</span><span class="token punctuation">(</span>footerPage<span class="token punctuation">.</span><span class="token function">changeLanguage</span><span class="token punctuation">(</span>language<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+            <span class="token function">expect</span><span class="token punctuation">(</span>localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'i18nextLng'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>to<span class="token punctuation">.</span><span class="token function">eq</span><span class="token punctuation">(</span>i18nextLngs<span class="token punctuation">[</span>language<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <p>gdzie footerPage.js (w tym przypadku selektory przetrzymywane są w osobnym pliku oraz obiekcie ‘footerSelectors’ choć nie w postaci getterów a jedynie selektorów - zatem realizowane jest podejście liniowe):</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">import { footerSelectors } from '../support/selectors/footerSelectors';
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> footerSelectors <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../support/selectors/footerSelectors'</span><span class="token punctuation">;</span>
 
-const i18nextLngs = {
-    en: 'en',
-    pl: 'pl',
-};
+<span class="token keyword">const</span> i18nextLngs <span class="token operator">=</span> <span class="token punctuation">{</span>
+    en<span class="token operator">:</span> <span class="token string">'en'</span><span class="token punctuation">,</span>
+    pl<span class="token operator">:</span> <span class="token string">'pl'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-export const footerPage = {
-    changeLanguage: (language) => {
-        cy.get(footerSelectors.languageBtn).click({ waitForAnimations: false });
-        cy.get(footerSelectors.languageOption)
-        .contains(language[0].toUpperCase() + language.substring(1))
-        .click({ waitForAnimations: false });
-    },
-};</code></pre></div>
+<span class="token keyword">export</span> <span class="token keyword">const</span> footerPage <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">changeLanguage</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">language</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>footerSelectors<span class="token punctuation">.</span>languageBtn<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">{</span> waitForAnimations<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        cy<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>footerSelectors<span class="token punctuation">.</span>languageOption<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>language<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> language<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">{</span> waitForAnimations<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 <hr>
 <p>Źródła:</p>
 <p><a href="https://medium.com/geekculture/using-pageobject-pattern-with-cypress-6d9907850522">Using PageObject pattern with Cypress</a> => <a href="https://github.com/anton-kravchenko/cypress-page-object-example">anton-kravchenko/cypress-page-object-example</a> => <a href="https://anton-kravchenko.github.io/cypress-selectors/">cypress-selectors</a></p>
