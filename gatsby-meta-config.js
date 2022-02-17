@@ -6,13 +6,13 @@ module.exports = {
   siteUrl: `https://kostyrko.github.io/kontrolqa/`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
-    github: ``, // Your GitHub account
+    github: `kostyrko`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: ``, // Your Facebook account
     linkedin: ``, // Your LinkedIn account
     instagram: ``, // Your Instagram account
   },
-  icon: `content/assets/felog.png`, // Add your favicon
+  icon: `content/assets/favicon.png`, // Add your favicon
   keywords: [`qa`, `testing`],
   comment: {
     disqusShortName: '', // Your disqus-short-name. check disqus.com.
