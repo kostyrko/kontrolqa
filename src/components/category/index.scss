@@ -1,6 +1,9 @@
 @import '../../styles/variables.scss';
 
 .category-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
