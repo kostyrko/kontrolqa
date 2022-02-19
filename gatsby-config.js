@@ -113,6 +113,44 @@ module.exports = {
         publisherId: metaConfig.ad,
       },
     },
+    {
+      
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+          name: 'pages',
+          engine: 'flexsearch',
+          query:`
+              query {
+                allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+                  nodes {
+                    excerpt
+                    fields {
+                      slug
+                    }
+                    frontmatter {
+                      date(formatString: "MMMM DD, YYYY")
+                      title,
+                      category,
+                      draft
+                    }
+                  }
+                }
+              }
+            `,
+          ref: 'slug',
+          index: ['title', 'excerpt', 'category'],
+          store: ['title', 'excerpt', 'slug', 'date', 'category', 'draft'],
+          normalizer: ({ data }) =>
+            data.allMarkdownRemark.nodes.map(node => ({
+                title: node.frontmatter.title,
+                excerpt: node.excerpt,
+                slug: node.fields.slug,
+                date: node.frontmatter.date,
+                category: node.frontmatter.category,
+                draft: node.frontmatter.draft
+          })),
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,
@@ -121,5 +159,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-sitemap`,
+    'gatsby-plugin-local-search'
   ],
 }

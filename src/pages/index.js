@@ -13,6 +13,8 @@ import { useScrollEvent } from '../hooks/useScrollEvent'
 import { Layout } from '../layout'
 import * as Dom from '../utils/dom'
 import * as EventManager from '../utils/event-manager'
+import { Search } from '../components/search'
+import { useFlexSearch } from 'react-use-flexsearch';
 
 const BASE_LINE = 80
 
@@ -20,18 +22,42 @@ function getDistance(currentPos) {
   return Dom.getDocumentHeight() - currentPos
 }
 
-export default ({ data, location }) => {
+
+function unFlattenResults (results) {
+  return results.map(post => {
+    const { slug, excerpt, title, category, date, draft } = post;
+    return { node :  {excerpt: excerpt, frontmatter: { title, category, date, draft }, fields : { slug }} };
+})};
+
+export default ({ data , location }) => {
+
   const { siteMetadata } = data.site
   const { countOfInitialPost } = siteMetadata.configs
-  const posts = data.allMarkdownRemark.edges
+
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get('s')
+  const [searchQuery, setSearchQuery] = useState(query || '');
+  console.log('indexData', data)
+  const results = useFlexSearch(searchQuery, data.localSearchPages.index, data.localSearchPages.store);
+
+  console.log('results', results);
+  const posts = searchQuery ? unFlattenResults(results) : data.allMarkdownRemark.edges;
+
+
+  
+  
   const categories = useMemo(
     () => _.uniq(posts.map(({ node }) => node.frontmatter.category)),
     []
-  )
+    )
   const bioRef = useRef(null)
   const [DEST, setDEST] = useState(316)
   const [count, countRef, increaseCount] = useRenderedCount()
   const [category, selectCategory] = useCategory(DEST)
+
+
+
+
 
   useEffect( tabRef => {
     setDEST(!bioRef.current ? 316 : bioRef.current.getBoundingClientRect().bottom + window.pageYOffset + 24 )
@@ -54,6 +80,10 @@ export default ({ data, location }) => {
     <Layout location={location} title={siteMetadata.title}>
       <Head title={HOME_TITLE} keywords={siteMetadata.keywords} />
       <Bio ref={bioRef} />
+      <Search
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
       <Category
         categories={categories}
         category={category}
@@ -71,6 +101,10 @@ export default ({ data, location }) => {
 
 export const pageQuery = graphql`
   query {
+    localSearchPages {
+      index
+      store
+    }
     site {
       siteMetadata {
         title
