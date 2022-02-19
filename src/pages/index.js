@@ -34,7 +34,9 @@ export default ({ data , location }) => {
   const { siteMetadata } = data.site
   const { countOfInitialPost } = siteMetadata.configs
 
-  const { search } = window.location;
+  const isBrowser = () => typeof window !== "undefined"
+  const { search } = isBrowser() && window.location;
+
   const query = new URLSearchParams(search).get('s')
   const [searchQuery, setSearchQuery] = useState(query || '');
   console.log('indexData', data)
