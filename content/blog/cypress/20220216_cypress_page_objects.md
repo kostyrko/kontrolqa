@@ -1,7 +1,7 @@
 ---
 title: 'Cypress - Page Objects'
 date: 2022-02-16 10:00
-category: 'Cypress'
+category: cypress
 draft: false
 ---
 
