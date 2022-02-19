@@ -13,7 +13,7 @@ export const Search = ({ searchQuery, setSearchQuery }) => {
         type="text"
         id="header-search"
         className="search-form__input"
-        placeholder="Search blog posts"
+        placeholder="Szukaj wpisu..."
         name="s"
       />
     </form>
