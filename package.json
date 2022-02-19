@@ -8,11 +8,13 @@
     "url": "https://github.com/JaeYeopHan/gatsby-starter-bee/issues"
   },
   "dependencies": {
+    "flexsearch": "^0.7.21",
     "gatsby": "^2.2.8",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-feed": "^2.1.0",
     "gatsby-plugin-google-adsense": "^1.1.3",
     "gatsby-plugin-google-analytics": "^2.0.17",
+    "gatsby-plugin-local-search": "^2.0.1",
     "gatsby-plugin-lodash": "^3.0.5",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-offline": "^2.0.25",
@@ -46,6 +48,7 @@
     "react-helmet": "^5.2.0",
     "react-switch": "^5.0.0",
     "react-typography": "^0.16.13",
+    "react-use-flexsearch": "^0.1.1",
     "smooth-scroll": "^16.0.0",
     "smoothscroll-polyfill": "^0.4.4",
     "typeface-catamaran": "0.0.54",
