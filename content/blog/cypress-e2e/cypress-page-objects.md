@@ -1,5 +1,5 @@
 ---
-title: 'Cypress - Page Objects'
+title: '🌲 Cypress - Page Objects'
 date: 2022-02-16 10:00
 category: cypress
 draft: false
@@ -9,8 +9,8 @@ draft: false
 ### Page objects
 
 **Page object pattern** - główne założenia: wprowadzenie modułowości w testach -> skupienie logiki testu w jednym miejscu a w innym stworzenie samego testu.
-👉 pozwala na ograniczenie używania selektorów w testach (✌️ pozytywnie wpływa na czytelność kodu) 
-🤌 niewielkie zmiany dokonane w testowanej aplikacji powinny mieć wpływ na zmianę Page Objectu, unikając zmian w kodzie testu (🤜 testy prostsze w utrzymaniu).
+👉 pozwala na ograniczenie używania selektorów w testach ( ✌️ pozytywnie wpływa na czytelność kodu) 
+🤌 niewielkie zmiany dokonane w testowanej aplikacji powinny mieć wpływ na zmianę Page Objectu, unikając zmian w kodzie testu ( 🤜 testy prostsze w utrzymaniu).
 
 Podsumowując
 
@@ -23,7 +23,7 @@ Page objecty przechowujemy w dedykowanym folderze (np. pageObjects) znajdującym
 
 #### 1. Page object oparty na klasie
 
-Przyjęte jest, że Page Objecty tworzone są na podstawie klasy / w przypadku Cypressa nie jest to jedank konieczne (o czym mowa poniżej).
+Przyjęte jest, że Page Objecty tworzone są na podstawie klasy / w przypadku Cypressa nie jest to jednak konieczne (o czym mowa poniżej).
 
 ```js
 export class CreditsPgObj {
@@ -58,25 +58,86 @@ import { viewports } from '../../support/main'
 import { CreditsPage } from '../../support/credits'
 
 viewports.forEach(viewport => {
-describe(`Bonus credits management - (${viewport})`, () => {
-    // stworzenie nowej instancji klasy page obiektu
-    const creditsPage = new CreditsPgObj()
-    beforeEach(() => {
-        cy.viewport(viewport)
-        cy.visit('').wait('@xyz').wait('@yz').wait('@zx')
-    })
+    describe(`Bonus credits management - (${viewport})`, () => {
+        // stworzenie nowej instancji klasy page obiektu
+        const creditsPage = new CreditsPgObj()
+        beforeEach(() => {
+            cy.viewport(viewport)
+            cy.visit('').wait('@xyz').wait('@yz').wait('@zx')
+        })
 
-    it('Bonus credits offer should be displayed')
-    () => {
-        CreditsPage.getLimitedTimeOffer().should('be.visible')
-        CreditsPage.getCreditsProductBonus().should('be.visible')
-        CreditsPage.getCreditsProductBonus().first().should('include.text', '100 Credits')
-    },
-    )
-})
+        it('Bonus credits offer should be displayed')
+        () => {
+            CreditsPage.getLimitedTimeOffer().should('be.visible')
+            CreditsPage.getCreditsProductBonus().should('be.visible')
+            CreditsPage.getCreditsProductBonus().first().should('include.text', '100 Credits')
+        },
+        )
+    })
 })
 ```
+---
+Kolejny przykład zastosowania Page Objectów znalazł się w artykule
+*Gleba Bahmatova* pod tytułem [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/#just-functions)  
+[ o **App Actions** mowa poniżej ]
 
+**Page Object ->  HomePage**
+
+```js
+import Header from './Headers';
+import SignInPage from './SignIn';
+
+class HomePage {
+    constructor() {
+        this.header = new Header();
+    }
+
+    visit() {
+        cy.visit('/');
+    }
+
+    getUserAvatar() {
+        return cy.get(`[data-testid=UserAvatar]`);
+    }
+
+    goToSignIn() {
+        const link = this.header.getSignInLink();
+        link.click();
+
+        const signIn = new SignInPage();
+        return signIn;
+    }
+}
+
+export default HomePage;
+```
+
+Wykorzystanie w teście [warto zwrócić uwagę na to gdzie znalazły się asercje]
+
+```js
+import HomePage from '../elements/pages/HomePage';
+
+describe('Sign In', () => {
+    it('should show an error message on empty input', () => {
+        const home = new HomePage();
+        home.visit();
+
+        const signIn = home.goToSignIn();
+
+        signIn.submit();
+
+        signIn.getEmailError()
+        .should('exist')
+        .contains('Email is required');
+
+        signIn
+        .getPasswordError()
+        .should('exist')
+        .contains('Password is required');
+    });
+});
+```
+---
 #### 2. Page object oparty na obiekcie
 
 W przypadku Cypressa, nie ma potrzeby tworzenia Page Objectów jako klas, a także tworzenia ich instancji ponieważ te nie wymagaj  prototypów innych klas i same nimi być nie muszą - zamiast tego Page Objecty mogą składać się nawet z pojedynczych funkcji lub dla porządku mogą one być zebrane w ramach obiektu.
@@ -95,7 +156,7 @@ export const menuPage = {
         },
 };
 ```
-
+---
 #### 3. Sposób na podział logiki w Page Objecty Model (POM)
 
  Swego czasu tutaj: [Dobre zasady testowania](https://kostyrko.github.io/zfrontu/testing-good-practices.html) pisałem, że dobry układ testu tj 3xA (Arrange/aranżacja, Act/działanie, Assert/sprawdzanie) - jak to się odnosi do tzw POM? Ja to rozumiem w sposób następujący - PageObject jest odpowiedzialny za interakcję ze stroną (przechowuje akcje, które są powtarzane w tekście) - jednak sama asercja (sprawdzenie poprawności wykonania się akcji) powinna znajdować się wewnątrz testu. Przygotowanie testu odbywać się może w różnych miejscach i na różne sposoby (pomijając przygotowanie środowiska-> cy.visit/cy.intercept czy localStorage, które mogą się znaleźć np. w beforeEach) ale skupiać w sobie będzie zebranie selektorów (w osobnej klasie bądź obiekcie), które następnie będą wykorzystane zarówno w ramach testu jak i w Page Object.
@@ -155,6 +216,14 @@ export const footerPage = {
     },
 };
 ```
+---
+### Page Object model? a może by tak zacząć stosować App Actions?
+
+Artykuł *Gleba Bahmatova* pod tytułem [Stop using Page Objects and Start using App Actions](https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/#just-functions) trafił do sporej ilości osób jednak sama adaptacja wydaje się nie być być powszechna... - 🤔  w jakich przypadkach Page Object się nie sprawdzają lub dobrą praktyką było by ich nie stosowanie? 👉  tam gdzie będą one stosowane do **wywołania stanu aplikacji przez UI** / przygotowanie stanu do testowania - dlaczego? - ponieważ faktycznie oznacza to ponowne przeprowadzanie testu. W takich przypadkach można by zastosować App Actions tzn. wykorzystanie funkcji znajdujących się w aplikacji/ danym komponencie bezpośrednio z w teście a następnie sprawdzanie jej stanu.
+
+Więcej na temat App Actions pojawi się w jednym z kolejnych wpisów na blogu.
+
+
 
 
 ----

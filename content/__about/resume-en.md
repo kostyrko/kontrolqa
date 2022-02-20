@@ -4,10 +4,16 @@ date: 2019-1-27 16:21:13
 lang: 'en'
 ---
 
-# Your name
+# Kontrolqa
 
 <div align="center">
 
-_Thank you for reading my resume. If you want to contact me, Please send me an email._
+🚧  
+
+Ta strona wymaga jeszcze dopracowania - treść pojawi się niedługo 🕓  
+
+🚧
+
+[Strona główna](https://kostyrko.github.io/kontrolqa/')
 
 </div>

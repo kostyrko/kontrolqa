@@ -1,5 +1,5 @@
 ---
-title: Cypress - fixtures
+title: '🌲 Cypress - fixtures'
 date: 2022-02-15 17:00
 category: cypress
 thumbnail: { thumbnailSrc }
