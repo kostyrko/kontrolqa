@@ -202,3 +202,11 @@ await pactum.spec()
 [API Integration Testing Made Easy](https://dev.to/asaianudeep/api-integration-testing-made-easy-1lcp)
 
 [REST API test automation with PactumJS](https://www.zeljkovic.sh/rest-api-test-automation-with-pactumjs/)
+
+[JavaScript: REST API Automation with PactumJS — Basics](https://asaianudeep.medium.com/javascript-rest-api-automation-with-pactumjs-basics-7247adf5ecf9)
+
+Wybrane zagadnienia z sekcji Q&A - github:
+
+[Save request and response json details in variables](https://github.com/pactumjs/pactum/discussions/81)
+
+[Auth0 authentication](https://github.com/pactumjs/pactum/issues/79)
