@@ -156,5 +156,9 @@ Tutaj znajdziesz linki do materiałów na YT(ang), które przedstawiają w jaki 
 
 [Testing periodic network requests with cy.intercept and cy.clock combination](https://www.cypress.io/blog/2021/02/23/cy-intercept-and-cy-clock/)
 
+[Cypress cy.intercept Problems/A few common cy.intercept gotchas and how to avoid them - glebbahmutov.com/](https://glebbahmutov.com/blog/cypress-intercept-problems/)
+
+[Improve Your End to End Tests with Cypress Intercept](https://javascript.plainenglish.io/improve-your-end-to-end-tests-with-cypress-intercept-2c68156d9495)
+
 
 
