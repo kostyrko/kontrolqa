@@ -25,4 +25,6 @@ draft: true
 
 🗄 [gremlins.js](https://github.com/marmelab/gremlins.js/blob/master/README.md)
 
+🗄 [Awesome Chaos Engineering ](https://github.com/dastergon/awesome-chaos-engineering)
 
+[CHAOS ENGINEERING](https://theqaconnection.com/2022/02/22/chaos-engineering/)
