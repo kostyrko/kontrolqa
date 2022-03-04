@@ -1,14 +1,14 @@
 ---
 title: '🤝 PactumJS - wprowadzenie'
 date: 2022-02-19 18:02:00
-category: pactumjs
+category: api
 thumbnail: { thumbnailSrc }
 draft: false
 ---
 
 ### Wprowadzenie
 
-Jednym z popularniejszych narzędzie to testowania API jest Postman 🚀 📮 i z pewnością jest dobrym wyborem kiedy szukamy rozwiązania posiadającego własne GUI - alternatywą dla takiego rozwiązania są narzędzia, które pozwalają na pisanie testów przy pomocy Pythona ([Requests](https://docs.python-requests.org/en/latest/)) czy JS ([PactumJS](https://pactumjs.com/) czy [SuperTest](https://github.com/visionmedia/supertest)) - poniżej przedstawiony zostanie wstęp do **PactumJS**.
+Jednym z popularniejszych narzędzie to testowania API jest Postman 🚀 📮 i z pewnością jest dobrym wyborem kiedy szukamy rozwiązania posiadającego własne GUI - alternatywą dla takiego rozwiązania są narzędzia, które pozwalają na pisanie testów przy pomocy Pythona ([Requests](https://docs.python-requests.org/en/latest/)) czy JS ([PactumJS](https://pactumjs.com/) / [SuperTest](https://github.com/visionmedia/supertest) / [Frisby.js](https://docs.frisbyjs.com/) / [Chakram](http://dareid.github.io/chakram/)) - na tym tle najlepiej zdaje się wypadać **PactumJS** (patrz porównanie -> [API Testing Tools in JavaScript](https://dev.to/asaianudeep/api-testing-tools-in-javascript-22d8)) i to właśnie tej bibliotece poświęciłem swoją uwagę.
 
 Darmowe strony przydatne do testowania API: 
 * [httpbin.org](http://httpbin.org/)
@@ -18,7 +18,7 @@ Darmowe strony przydatne do testowania API:
 
 ### Przygotowanie środowiska
 
-**Założenie wstępne**: node 📂  jest zainstalowany na lokalnej maszynie.
+**Założenie wstępne**: `node.js` 📂  jest zainstalowany na lokalnej maszynie.
 
 Instalacja PactumJS
 
@@ -205,8 +205,4 @@ await pactum.spec()
 
 [JavaScript: REST API Automation with PactumJS — Basics](https://asaianudeep.medium.com/javascript-rest-api-automation-with-pactumjs-basics-7247adf5ecf9)
 
-Wybrane zagadnienia z sekcji Q&A - github:
-
-[Save request and response json details in variables](https://github.com/pactumjs/pactum/discussions/81)
-
-[Auth0 authentication](https://github.com/pactumjs/pactum/issues/79)
+[API Testing Tools in JavaScript](https://dev.to/asaianudeep/api-testing-tools-in-javascript-22d8)

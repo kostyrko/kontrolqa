@@ -1,7 +1,7 @@
 ---
 title: 'Cypress - wprowdzenie cz. 2'
 date: 2022-01-16 12:00
-category: cypress
+category: e2e
 draft: false
 ---
 

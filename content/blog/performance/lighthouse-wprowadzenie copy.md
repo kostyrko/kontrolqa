@@ -1,7 +1,7 @@
 ---
 title: 'Lighthouse - Wprowadzenie'
 date: 2022-02-21 10:00
-category: lighthouse
+category: performance
 draft: true
 ---
 

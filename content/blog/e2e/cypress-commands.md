@@ -1,7 +1,7 @@
 ---
 title: 'Cypress - custom Commands'
 date: 2022-01-29 13:00
-category: cypress
+category: e2e
 draft: false
 ---
 

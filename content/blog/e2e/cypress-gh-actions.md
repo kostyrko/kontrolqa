@@ -1,7 +1,7 @@
 ---
 title: 'Cypress - GitHub Actions'
 date: 2022-02-20 10:00
-category: cypress
+category: e2e
 draft: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: '🌲 Cypress - test studio'
 date: 2022-02-09 13:00
-category: cypress
+category: e2e
 thumbnail: { thumbnailSrc }
 draft: false
 ---

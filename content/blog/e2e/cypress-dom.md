@@ -1,7 +1,7 @@
 ---
 title: 'Cypress - przechodzenie pomiędzy elementami drzewa DOM'
 date: 2022-01-30 12:00
-category: cypress
+category: e2e
 draft: false
 ---
 

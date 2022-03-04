@@ -1,7 +1,7 @@
 ---
 title: 'Cypress: cy.intercept() - przechwytywanie zapytań HTTP'
 date: 2022-02-02 10:00
-category: cypress
+category: e2e
 draft: false
 ---
 

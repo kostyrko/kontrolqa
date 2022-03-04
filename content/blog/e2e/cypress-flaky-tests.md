@@ -1,7 +1,7 @@
 ---
 title: 'Cypress - flaky tests'
 date: 2022-02-21 10:00
-category: cypress
+category: e2e
 draft: true
 ---
 
