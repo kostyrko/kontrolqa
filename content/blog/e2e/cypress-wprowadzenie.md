@@ -34,31 +34,31 @@ Cypress jest oparty o bibl. Mocha (struktura test) oraz Chai (asercje, funkcje, 
 
 Bazujący na html tagu `<input>`
 ```js
-        cy.get("input")
-
+cy.get("input")
+```
 Bazujący na atrybucie elementu oraz jego wartości
 ```js
-        cy.get("input[name='first_name']")
+cy.get("input[name='first_name']")
 ```
 Bazujący na id elementu
 ```js
-        cy.get("#first_name")
+cy.get("#first_name")
 ```
 Bazujący na klasie elementu
 ```js
-        cy.get(".form-control")
+cy.get(".form-control")
 ```
 Bazujący na wielu klasach
 ```js
-        cy.get("[class='navbar navbar-expand-lg navbar-light bg-light']")
+cy.get("[class='navbar navbar-expand-lg navbar-light bg-light']")
 ```
 Bazujący na wielu atrybutach
 ```js
-        cy.get("[name='email'][placeholder='Email Address']")
+cy.get("[name='email'][placeholder='Email Address']")
 ```
 Bazujący na xpath
 ```js
-        cy.xpath("//input[@name='first_name']")
+cy.xpath("//input[@name='first_name']")
 ```
 ### [Asercje/Założenia (biblioteka Chai)](https://docs.cypress.io/guides/references/assertions#Chai)
 
@@ -66,107 +66,107 @@ Często używane asercje:
 
 Długość
 ```js
-        cy.get("input").should("have.length", 1)
-
+cy.get("input").should("have.length", 1)
+```
 Klasa
 ```js
-        cy.get("input").should("have.class", "form-control")
+cy.get("input").should("have.class", "form-control")
 ```
 Wartość
 ```js
-        cy.get("input").should("have.value", "xyz")
+cy.get("input").should("have.value", "xyz")
 ```
 Zawartość tekstu
 ```js
-        cy.get("input").should("have.text", "xyz")
-
+cy.get("input").should("have.text", "xyz")
+```
 Widoczność
 ```js
-        cy.get("input").should("be.visible")
+cy.get("input").should("be.visible")
 ```
 
 Obecność elementu
 ```js
-        cy.get("input").should("exist")
+cy.get("input").should("exist")
 ```
 Stan elementu
 ```js
-        cy.get("input")
-            .should("be.disabled")
-            // let's enable this element from the test
-            .invoke('prop', 'disabled', false)
-        
-        cy.get("input").should("be.checked")   
+cy.get("input")
+        .should("be.disabled")
+        // let's enable this element from the test
+        .invoke('prop', 'disabled', false)
+
+cy.get("input").should("be.checked")   
 ```
 
 Łączenie asercji
 ```js
-        cy.get("input")
-            .should("be.disabled")
-            .should("be.visible")
+cy.get("input")
+        .should("be.disabled")
+        .should("be.visible")
 ```
 
 `expect` - asercja (Chai), która pozwala na sprawdzenie założenia w ramach enkapsulacji funckcji wywołanej przez zastosowanie then() / obsługi promisa.
 ```js
-        cy.get("input")
-            .should("have.value", "xyz")
-            .then(function(input) {
-                expect(input.val()).to.equal("xyz")
-            })
+cy.get("input")
+        .should("have.value", "xyz")
+        .then(function(input) {
+        expect(input.val()).to.equal("xyz")
+        })
 ```
 
 #### Zawiera/Contains
 
 Asercja sprawdzająca czy element zawiera znaki
 ```js
-        cy.get("input")
-            .should("contain", "xyz")
+cy.get("input")
+        .should("contain", "xyz")
 ```
 
 ### cy.document()
 
 Zwraca obiekt/dokument obecnie aktywnego okna (window.document object) - pozwalając tym samym na sprawdzenie wszystkich metod z DOM
 ```js
-        cy.document()
-            .should("have.property", "charset").and("eq", "UTF-8")
-            .should("have.property", "contentType").and("eq", "text/html; charset=UTF-8")
-            .should("have.property", "cookie").and("eq", "key=value")
-            .should("have.property", "lastModified").and("eq", "Mon, 07 Aug 2012 19:00:00 GMT")
-            .should("have.property", "readyState").and("eq", "complete")
-            .should("have.property", "title").and("eq", "Test Title")
-            .should("have.property", "URL").and("eq", "http://example.com")
-            .should("have.property", "webdriver").and("eq", false)
-            .should("have.property", "window")
-            .should("have.property", "headers")
-            .should("have.property", "content")
-            .should("have.property", "status")
-            .should("have.property", "statusText")
-            .should("have.property", "ok")
-            .should("have.property", "redirected")
-            .should("have.property", "inError")
-            .should("have.property", "error")
-            .should("have.property", "response")
-            .should("have.property", "responseText")
-            .should("have.property", "responseType")
-            .should("have.property", "responseURL")
-            .should("have.property", "responseHeaders")
-            .should("have.property", "incomplete")
-            .should("have.property", "xhr")
-            .should("have.property", "redirectedFrom")
+cy.document()
+        .should("have.property", "charset").and("eq", "UTF-8")
+        .should("have.property", "contentType").and("eq", "text/html; charset=UTF-8")
+        .should("have.property", "cookie").and("eq", "key=value")
+        .should("have.property", "lastModified").and("eq", "Mon, 07 Aug 2012 19:00:00 GMT")
+        .should("have.property", "readyState").and("eq", "complete")
+        .should("have.property", "title").and("eq", "Test Title")
+        .should("have.property", "URL").and("eq", "http://example.com")
+        .should("have.property", "webdriver").and("eq", false)
+        .should("have.property", "window")
+        .should("have.property", "headers")
+        .should("have.property", "content")
+        .should("have.property", "status")
+        .should("have.property", "statusText")
+        .should("have.property", "ok")
+        .should("have.property", "redirected")
+        .should("have.property", "inError")
+        .should("have.property", "error")
+        .should("have.property", "response")
+        .should("have.property", "responseText")
+        .should("have.property", "responseType")
+        .should("have.property", "responseURL")
+        .should("have.property", "responseHeaders")
+        .should("have.property", "incomplete")
+        .should("have.property", "xhr")
+        .should("have.property", "redirectedFrom")
 ```
 ### cy.title()
 
 Sprawdza tytuł strony (`<title>`)
 ```js
-        cy.title().should("include", "Test Title")
+cy.title().should("include", "Test Title")
 ```
 
 ### cy.url()
 
 
 Sprawdza zbiera aktualny URL strony i przechowuje go jako łańcuch znaków/string 
-```
-        cy.url().should("include", "http://example.com")
+```js
+cy.url().should("include", "http://example.com")
 ```
 ---
 ### Strony/projekty do testowania 
