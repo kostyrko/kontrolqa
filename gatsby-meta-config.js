@@ -2,7 +2,7 @@ module.exports = {
   title: `Kontrolqa`,
   description: `Blog z treścią QA`,
   author: `kostyrko`,
-  introduction: `Tu niedługo pojawi się treść dotycząca testowania oraz kontroli jakości aplikacji webowych oraz mobilnych`,
+  introduction: `Blog poświęcony testowaniu aplikacji`,
   siteUrl: `https://kostyrko.github.io/kontrolqa/`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
@@ -13,7 +13,7 @@ module.exports = {
     instagram: ``, // Your Instagram account
   },
   icon: `content/assets/favicon.png`, // Add your favicon
-  keywords: [`qa`, `testing`],
+  keywords: [`qa`, `testing`, `e2e`, `e2e testing`, `test automation`], // Add some tags
   comment: {
     disqusShortName: '', // Your disqus-short-name. check disqus.com.
     utterances: 'kostyrko/kontrolqa', // Your repository for archive comment
@@ -27,7 +27,7 @@ module.exports = {
   share: {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
   },
-  ga: '0', // Add your google analytics tranking ID
+  ga: 'G-EJ679JTD8L', // Add your google analytics tranking ID
   ad: '', // Add your google adsense publisherId `ca-pub-xxxxxxxxxx`
 
 }
