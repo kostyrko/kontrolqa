@@ -39,10 +39,8 @@ export default ({ data , location }) => {
 
   const query = new URLSearchParams(search).get('s')
   const [searchQuery, setSearchQuery] = useState(query || '');
-  console.log('indexData', data)
   const results = useFlexSearch(searchQuery, data.localSearchPages.index, data.localSearchPages.store);
 
-  console.log('results', results);
   const posts = searchQuery ? unFlattenResults(results) : data.allMarkdownRemark.edges;
 
 
@@ -130,6 +128,7 @@ export const pageQuery = graphql`
             title
             category
             draft
+            tags
           }
         }
       }
