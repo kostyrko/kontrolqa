@@ -1,0 +1,25 @@
+.tags {
+    margin-bottom: 5px;
+}
+.tag {
+    padding: 0.2em 0.6em;
+    font-size: .74em;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
+    background-color: gray;
+}
+
+.tag + .tag {
+    margin-left: 0.5em;
+}
+
+.thumbnail-tag {
+    background-color: inherit;
+    padding: 0;
+    color: #7d7d7d;
+    font-weight: 600;
+}

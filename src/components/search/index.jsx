@@ -9,7 +9,7 @@ export const Search = ({ searchQuery, setSearchQuery }) => {
       </label>
       <input
         value={searchQuery}
-        onInput={e => setSearchQuery(e.target.value)}
+        onChange={e => setSearchQuery(e.target.value)}
         type="text"
         id="header-search"
         className="search-form__input"

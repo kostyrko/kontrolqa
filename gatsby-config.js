@@ -130,8 +130,7 @@ module.exports = {
                     frontmatter {
                       date(formatString: "MMMM DD, YYYY")
                       title,
-                      category,
-                      draft
+                      category
                     }
                   }
                 }
@@ -139,7 +138,7 @@ module.exports = {
             `,
           ref: 'slug',
           index: ['title', 'excerpt', 'category'],
-          store: ['title', 'excerpt', 'slug', 'date', 'category', 'draft'],
+          store: ['title', 'excerpt', 'slug', 'date', 'category'],
           normalizer: ({ data }) =>
             data.allMarkdownRemark.nodes.map(node => ({
                 title: node.frontmatter.title,
@@ -147,7 +146,6 @@ module.exports = {
                 slug: node.fields.slug,
                 date: node.frontmatter.date,
                 category: node.frontmatter.category,
-                draft: node.frontmatter.draft
           })),
       }
     },
