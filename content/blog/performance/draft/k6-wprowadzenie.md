@@ -163,5 +163,7 @@ teardown - zamykanie po każdym teście
 []()
 
 
+[](https://sajidmanzoor.wordpress.com/2012/12/26/performance-testing-requirement-gathering-questionnaire/)
+
 
 
