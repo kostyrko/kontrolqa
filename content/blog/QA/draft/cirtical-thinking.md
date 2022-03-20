@@ -1,0 +1,1 @@
+https://www.ministryoftesting.com/dojo/series/the-testing-planet-2021/lessons/become-a-better-tester-by-becoming-a-better-critical-thinker
