@@ -2,7 +2,7 @@
 title: 'Test automation - no code/low code'
 date: 2021-06-25 10:00
 category: qa
-draft: ture
+draft: true
 ---
 
 
