@@ -7,7 +7,7 @@ draft: false
 
 ![](https://static-cms.hotjar.com/documents/conducting-usability-test_yon4BQT.svg)
 
-Niedawno odbyła się zdalna konferencja prowadzona przez Applitools oraz Cypress nazwana Front-End Test Fest 2021. Jedeno z wystąpień było poświęcone dobrym praktykom pisania testów (link w źródłach) i dzisiejszy wpis jest ekstraktem z tego wystąpienia
+Niedawno (2021-06-25) odbyła się zdalna konferencja prowadzona przez Applitools oraz Cypress nazwana Front-End Test Fest 2021. Jedeno z wystąpień było poświęcone dobrym praktykom pisania testów (link w źródłach) i dzisiejszy wpis jest ekstraktem z tego wystąpienia
 
 ### Główna zasada: testy powinny być proste - "flat test desing"
 

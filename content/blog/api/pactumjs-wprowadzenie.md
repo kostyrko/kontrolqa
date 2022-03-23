@@ -3,6 +3,7 @@ title: '🤝 PactumJS - wprowadzenie'
 date: 2022-02-19 18:02:00
 category: api
 thumbnail: { thumbnailSrc }
+tags: ["pactumJS", "js", "api testing"]
 draft: false
 ---
 

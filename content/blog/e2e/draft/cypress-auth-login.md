@@ -21,6 +21,8 @@ draft: true
 
 [📽 How to Bypass Firebase Authentication for Cypress Tests](https://www.youtube.com/watch?v=JqEzA44Lsts&ab_channel=JoshuaMorony)
 
+[! Handle OAuth 2.0 API Test using Cypress and Postman || RefreshToken](https://www.youtube.com/watch?v=b7BmxtLEIkg)
+
 
 
 

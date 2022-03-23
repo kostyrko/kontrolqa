@@ -2,7 +2,7 @@
 title: '🌲 Cypress - rejestracja wykorzystująca email (nodemailer/ethereal)'
 date: 2022-03-06 10:00
 category: cypress
-draft: false
+draft: true
 ---
 
 Rejstracja wykorzystująca email
@@ -89,9 +89,13 @@ for debugging, the password is 4DwxhRKRRk3SUHqJem
 [<img src="https://user-images.githubusercontent.com/4564386/122464439-814de100-cfbf-11eb-9227-95a9cc3cc2f1.png" width="100%"/>](https://user-images.githubusercontent.com/4564386/122464439-814de100-cfbf-11eb-9227-95a9cc3cc2f1.png)
 ### gmail-tester
 
+```shell
+npm install --save-dev gmail-tester
+```
 
 
-Źródła
+
+#### Źródła
 
 [How to poll a Gmail inbox using cypress.io](https://levz0r.medium.com/how-to-poll-a-gmail-inbox-in-cypress-io-a4286cfdb888)
 
@@ -107,7 +111,7 @@ for debugging, the password is 4DwxhRKRRk3SUHqJem
 
 ----
 
-Źródła/artykuły do materiałów o podobnej tematyce:
+#### Źródła/artykuły do materiałów o podobnej tematyce:
 
 [📄 - docs.cypress.io - Environment Variables](https://docs.cypress.io/guides/guides/environment-variables#Option-2-cypress-env-json)
 
