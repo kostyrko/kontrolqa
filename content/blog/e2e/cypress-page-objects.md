@@ -157,13 +157,13 @@ export const menuPage = {
 };
 ```
 ---
-#### 3. Sposób na podział logiki w Page Objecty Model (POM)
+#### 3. Sposób na podział logiki w Page Object Model (POM)
 
  Swego czasu tutaj: [Dobre zasady testowania](https://kostyrko.github.io/zfrontu/testing-good-practices.html) pisałem, że dobry układ testu tj 3xA (Arrange/aranżacja, Act/działanie, Assert/sprawdzanie) - jak to się odnosi do tzw POM? Ja to rozumiem w sposób następujący - PageObject jest odpowiedzialny za interakcję ze stroną (przechowuje akcje, które są powtarzane w tekście) - jednak sama asercja (sprawdzenie poprawności wykonania się akcji) powinna znajdować się wewnątrz testu. Przygotowanie testu odbywać się może w różnych miejscach i na różne sposoby (pomijając przygotowanie środowiska-> cy.visit/cy.intercept czy localStorage, które mogą się znaleźć np. w beforeEach) ale skupiać w sobie będzie zebranie selektorów (w osobnej klasie bądź obiekcie), które następnie będą wykorzystane zarówno w ramach testu jak i w Page Object.
 
-Scenariusz testowy w kontekście testowania aplikacji blogowej może przedstawiać się w sposób następujący: logujemy się, przechodzimy do sekcji z nowymi artykułami, tworzymy treść nowego artykuły, postujemy go - a następnie sprawdzamy czy artykuł został dodany/opublikowany.
+Scenariusz testowy w kontekście testowania aplikacji blogowej może przedstawiać się w sposób następujący: logujemy się, przechodzimy do sekcji z nowymi artykułami, tworzymy treść nowego artykuł, postujemy go - a następnie sprawdzamy czy artykuł został dodany/opublikowany.
 
-**Często spotykane podejście (podejście liniowe)** => 1. Zebranie selektorów w obiekcie (w którym przechowywany jest PageObject), 2. wykorzystanie PageObjectu min. do cy.get() + funkcjonalność 3. wykorzystanie w tekście getterów z PageObjectu do tworzenia asercji.
+**Często spotykane podejście (podejście liniowe)** => 1. Zebranie selektorów w obiekcie (w pliku w którym przechowywany jest PageObject), 2. wykorzystanie PageObjectu min. do cy.get() + funkcjonalność 3. wykorzystanie w teście getterów z PageObjectu do tworzenia asercji.
 
 ```js
 const SELECTORS = {
@@ -195,7 +195,6 @@ it('change language between different languages', () => {
     });
 });
 ```
-
 
 gdzie footerPage.js (w tym przypadku selektory przetrzymywane są w osobnym pliku oraz obiekcie 'footerSelectors' choć nie w postaci getterów a jedynie selektorów - zatem realizowane jest podejście liniowe):
 

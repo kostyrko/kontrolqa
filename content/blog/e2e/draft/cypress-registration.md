@@ -51,7 +51,6 @@ mikolaj@MacBook-Air cypress-ethereal-email-example-main % as-a cypress-ethereal-
 and when url "[ 'http://localhost:3000' ]" is responding with HTTP status code 200
 running tests using command "npm run cy:open"
 
-
 > cypress-ethereal-email-example@1.0.0 start
 > next dev
 
@@ -59,12 +58,7 @@ ready - started server on 0.0.0.0:3000, url: http://localhost:3000
 info  - Loaded env from /Users/mikolaj/Downloads/cypress-ethereal-email-example-main/.env
 event - compiled client and server successfully in 946 ms (110 modules)
 wait  - compiling / (client and server)...
-Browserslist: caniuse-lite is outdated. Please run:
-npx browserslist@latest --update-db
-
-Why you should do it regularly:
-https://github.com/browserslist/browserslist#browsers-data-updating
-event - compiled client and server successfully in 3.2s (127 modules)
+[...]
 
 > cypress-ethereal-email-example@1.0.0 cy:open
 > cypress open
@@ -89,11 +83,35 @@ for debugging, the password is 4DwxhRKRRk3SUHqJem
 [<img src="https://user-images.githubusercontent.com/4564386/122464439-814de100-cfbf-11eb-9227-95a9cc3cc2f1.png" width="100%"/>](https://user-images.githubusercontent.com/4564386/122464439-814de100-cfbf-11eb-9227-95a9cc3cc2f1.png)
 ### gmail-tester
 
-```shell
+```bash
 npm install --save-dev gmail-tester
 ```
 
+Movie here:
 
+important links to visit
+
+https://console.cloud.google.com/apis/
+
+
+Before setting up follow these instructions
+
+```text
+Go to https://console.developers.google.com/
+On the top left beside the words "Google APIs" click the project dropdown on the right
+Ensure that your correct project is selected
+Click "OAuth consent screen" on the left side of the screen (below "Credentials")
+If you have not created a consent screen, do that first
+Under "Test users" there is a button called "+ ADD USERS"
+Type the email of the account you will be testing with, press enter, then click save.
+It should work now
+```
+
+["Error 403: access_denied" from Google authentication web api despite google account being owner](https://stackoverflow.com/questions/65184355/error-403-access-denied-from-google-authentication-web-api-despite-google-acc)
+
+
+Refres token 
+[Token expire after 7 days #56](https://github.com/levz0r/gmail-tester/issues/56)
 
 #### Źródła
 
