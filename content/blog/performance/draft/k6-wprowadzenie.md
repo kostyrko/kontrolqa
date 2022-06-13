@@ -165,5 +165,5 @@ teardown - zamykanie po każdym teście
 
 [](https://sajidmanzoor.wordpress.com/2012/12/26/performance-testing-requirement-gathering-questionnaire/)
 
-
+[Rendezvous with k6](https://k6.io/blog/rendezvous-with-k6/?utm_campaign=Software%2BTesting%2BWeekly&utm_medium=email&utm_source=Software_Testing_Weekly_127)
 

@@ -88,3 +88,5 @@ https://www.guru99.com/risk-based-testing.html - identyfikacja ryzyka
 [When Should You Take a Risk-based Approach to Testing and How To Implement It Right?](https://www.scnsoft.com/software-testing/risk-based-testing)
 
 [What Is Software Testing Life Cycle (STLC)?](https://www.softwaretestinghelp.com/what-is-software-testing-life-cycle-stlc/)
+
+[Risk-Based Testing Averse](https://qahiccupps.blogspot.com/2022/06/risk-based-testing-averse.html)
