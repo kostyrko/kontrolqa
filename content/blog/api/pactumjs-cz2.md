@@ -88,3 +88,5 @@ Organizowanie - wysłanie zapytania, przygotowanie headerów, body itp. dążąc
 [Testing OAuth2 Authorization Flow with Postman (Authorization Code Grant)](https://www.youtube.com/watch?v=NRU_KdUSjD4)
 
 [Using REST-assured to Test OAuth 2.0 flow Examples](https://devqa.io/rest-assured-oauth2-workflow-examples/)
+
+[Writing API tests with PactumJS and Jest](https://www.testingwithmarie.com/post/writing-api-tests-with-pactumjs-and-jest)
