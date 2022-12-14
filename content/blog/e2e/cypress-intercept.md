@@ -129,6 +129,22 @@ Po pierwszych dwóch razach, responses.shift() zawsze zwraca **undefined** i wte
       cy.contains('kiwi 🥝')
     })
     
+### Zmiana części obiektu odpowiedzi
+
+Cypress pozwala również na zmianę jedynie części obiektu zwracanego przez API. W poniższym przykładzie wartość właściwości listBankAccount obiektu body.data zostaje zastąpiona pustą tablicą / 
+źródło przykładu: [Intercepting Network Requests > Modifying Response Data](https://learn.cypress.io/advanced-cypress-concepts/intercepting-network-requests)
+
+        cy.intercept("POST", "/bankaccounts", (req) => {
+          const { body } = req
+          req.continue((res) => {
+            res.body.data.listBankAccount = []
+          })
+        })
+        
+W tym celu danych odpowiedzi należy zastosować metodę [.continue()](https://docs.cypress.io/api/commands/intercept#Controlling-the-outbound-request-with-req-continue) (uwaga: ta metoda bez podania argumentów pozwala na modyfikację wychodzących zapytań)
+
+
+
 
 ----
 ### Testowanie API przy pomocy Cypressa
