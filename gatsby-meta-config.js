@@ -1,5 +1,5 @@
 module.exports = {
-  title: `Kontrolqa`,
+  title: `Kontrolqa 👾`,
   description: `Software Quality Assurance`,
   author: `kostyrko`,
   introduction: `Blog focused on Software Quality Assurance topics with emphasis on test automation`,

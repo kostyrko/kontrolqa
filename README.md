@@ -100,6 +100,6 @@ src/styles
 
 <div align="center">
 
-<sub><sup>Project by <a href="https://github.com/JaeYeopHan">@Jbee</a></sup></sub><small>✌</small>
+<sub><sup>Org project by <a href="https://github.com/JaeYeopHan">@Jbee</a></sup></sub><small>✌</small>
 
 </div>
