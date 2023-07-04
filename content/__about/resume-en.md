@@ -1,6 +1,6 @@
 ---
 title: 'about'
-date: 2019-1-27 16:21:13
+date: 2023-07-03 16:21:13
 lang: 'en'
 ---
 
@@ -10,10 +10,10 @@ lang: 'en'
 
 🚧  
 
-Ta strona wymaga jeszcze dopracowania - treść pojawi się niedługo 🕓  
+Under construction
 
 🚧
 
-[Strona główna](https://kostyrko.github.io/kontrolqa/')
+[Main page](https://kostyrko.github.io/kontrolqa/)
 
 </div>
