@@ -3,86 +3,96 @@ title: 'Cypress - custom Commands'
 date: 2022-01-29 13:00
 category: e2e
 draft: false
+lang: 'en'
+tags: ["cypress", "test automation", "e2e", "mocha", "chai"]
 ---
 
 ![](https://digital.ai/sites/default/files/pictures/styles/maxwidth_1920/public/blog-images//cypress-framework-1.jpg?itok=Iw9boVx6)
 
-### Wprowadzenie
+### Introduction
 
-Cypress jako taki zawiera różnego rodzaju komendy odpowiadający za konkretne przeprowadzanie testów mających wpływ na zachowanie się aplikacji, pozwala również na dodanie własnych komend tzw. **custom commands** - które nie są niczym innym niż funkcją które w łatwy sposób można łączyć z obiektami cypressowymi - to pozwala na zamknięcie pewnej powtarzalnej logiki/kodu, który można stosować w wielu miejscach.
+Cypress provides various commands for conducting specific tests that impact the behavior of an application. It also allows adding custom commands, which are nothing more than functions that can be easily combined with Cypress objects. This enables encapsulating reusable logic or code that can be used in multiple places.
 
+The `overwrite` function allows overriding existing Cypress commands. For example:
 
-+ `overwrite` pozwala na nadpisanie funkcji już w cypressie zawartych =>
+```js
+Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
+  return originalFn(url, {
+    ...options,
+    onBeforeLoad(win) {
+      win.fetch = null;
+    },
+  });
+});
+```
 
-      Cypress.Commands.overwrite('visit', (originalFn, url, options) => {
-        return originalFn(url, {
-          ...options,
-          onBeforeLoad(win) {
-            win.fetch = null;
-          },
-        });
-      });
+After installing Cypress, you can find the `commands.js` file in the `support` folder. This file needs to be linked in the `index.js` file to import our custom commands every time Cypress is run.
 
-
-Po zainstalowaniu Cypressa w folderze **support** znaleźć można plik **commands.js** - ten musi być podlinkowany w **index.js** aby nasze komendy były importowane za każdym razem kiedy cypress jest odpalany.
 
 ---
-#### Przykładowe komendy - commands.js
+#### Sample Commands - commands.js
 
-**Wybranie n-tego dziecka**
+**Selecting the Nth Child**
 
-    Cypress.Commands.add('selectNth', { prevSubject: 'element' }, (subject, nth) => {
-      cy.wrap(subject)
-        .children('option')
-        .eq(nth)
-        .then(elem => {
-          cy.wrap(subject).select(elem.val())
-        })
+```js
+Cypress.Commands.add('selectNth', { prevSubject: 'element' }, (subject, nth) => {
+  cy.wrap(subject)
+    .children('option')
+    .eq(nth)
+    .then(elem => {
+      cy.wrap(subject).select(elem.val())
     })
+})
+```
 
-zastosowanie
+Usage:
 
-    cy.get('#select').selectNth(2)
+```js
+cy.get('#select').selectNth(2)
+```
 
+**Simple Text Generator**
 
-**Prosty generator tekstu**
+```js
+const generateRandomText = () => Math.random().toString(36).substr(2, 10)
 
-    const generateRandomText = () => Math.random().toString(36).substr(2, 10)
+Cypress.Commands.add('fillWithRandomText', { prevSubject: 'element' }, subject =>
+  cy.wrap(subject).clear().type(generateRandomText()),
+)
+```
 
+Similarly, for usage:
 
-    Cypress.Commands.add('fillWithRandomText', { prevSubject: 'element' }, subject =>
-      cy.wrap(subject).clear().type(generateRandomText()),
-    )
+```js
+cy.get('#input').fillWithRandomText()
+```
 
-analogicznie zastosowanie
+For this command **checking text content**, a string needs to be passed.
 
-    cy.get('#input').fillWithRandomText()
+```js
+Cypress.Commands.add('checkTextContent', { prevSubject: 'element' }, (subject, contains: string) =>
+  cy
+    .wrap(subject)
+    .invoke('text')
+    .then(text => {
+      expect(text).to.contain(contains)
+    }),
+)
 
+cy.get('#input').checkTextContent('Hello World')
+```
 
-Do tej komendy **sprawdzającej zawartość tekstu** należy przekazać łańcuch znaków
+This command takes a URL as a string and an array containing objects that will be used to stub requests or provide responses for subsequent requests. The assumption is that in a given test, we want to test the application's response to multiple requests of the same type but with different response contents.
 
-    Cypress.Commands.add('checkTextContent', { prevSubject: 'element' }, (subject, contains: string) =>
-      cy
-        .wrap(subject)
-        .invoke('text')
-        .then(text => {
-          expect(text).to.contain(contains)
-        }),
-    )
+```js
+Cypress.Commands.add('multipleIntercepts', (url: string, responses: {}[]) => {
+  cy.intercept(url, req => {
+    req.reply(responses.shift())
+  })
+})
+```
 
-    cy.get('#input').checkTextContent('Hello World')
-
-
-Ta komenda przyjmuje url w postaci łańcucha znaków oraz tablicę zawierającą obiekty, którymi request ma być stubbowany/ dto które mają być podstawione podczas kolejnych zapytań / założenie jest że w danym teście mamy testować reakcję aplikacji, obsługujących wiele zapytań tego samego typu, ale różnych zawartościach odpowiedzi na nie.
-
-    Cypress.Commands.add('multipleIntercepts', (url: string, responses: {}[]) => {
-      cy.intercept(url, req => {
-        req.reply(responses.shift())
-      })
-    })
-
-
-Źródła:
+Sources:
 
 [Create your OWN CYPRESS COMMAND NOW! | Cypress Tutorial For Beginners](https://www.youtube.com/watch?v=66bEpdatEYQ&list=PLYDwWPRvXB8-8LG2hZv25HO6C3w_vezZb&index=12)
 

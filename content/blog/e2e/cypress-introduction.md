@@ -2,6 +2,7 @@
 title: 'Cypress - introduction'
 date: 2022-01-09 12:00
 category: e2e
+tags: ["cypress", "test automation", "e2e", "mocha", "chai"]
 draft: false
 lang: 'en'
 ---
