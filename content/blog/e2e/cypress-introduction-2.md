@@ -1,5 +1,5 @@
 ---
-title: 'Cypress - introduction part 2'
+title: '🌲 Cypress - introduction part 2'
 date: 2022-01-16 12:00
 category: e2e
 draft: false

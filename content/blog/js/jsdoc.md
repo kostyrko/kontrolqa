@@ -6,60 +6,55 @@ draft: false
 tags: ["java script", "js", "jsdocs", "documentation"]
 ---
 
-# JSDoc czyli sposób na dokumentację kodu JavaScript - wprowadzenie
+# JSDoc: A Way to Document JavaScript Code - Introduction
 
-Wykorzystanie API JSDoc pozwala na dokumentację kodu JS w ramach zaproponowanego w 1999 roku schematu - ten został powszechnie przyjęty oraz do dziś jest z powodzeniem stosowany. Stosowanie się do zaproponowanego schematu pozytywnie wpływa na jej czytelność. 
+Using the JSDoc API allows for documenting JS code according to the proposed schema introduced in 1999. This schema has been widely accepted and is still successfully used today. Adhering to the proposed schema positively affects the readability of the documentation.
 
-W przypadku stosowania IDE typu VSC lub WebStorm oraz innych podobnych stosowanie JSDoc powoduje, że po najechaniu na nazwę klasy, metody, zmiennej lub funkcji wyświetla się podpowiedź zawierająca opis zawarty w pliku JSDoc - co jest znaczącym ułatwieniem dla użytkownika.
+When using IDEs like VSC or WebStorm, and similar ones, using JSDoc provides users with helpful tooltips containing the description from the JSDoc file when hovering over a class, method, variable, or function name.
 
-
-
-Główny schemat miejsca zapisu informacji na temat składa się z gwiazdek oraz ukośnika wstecznego otwierającego oraz zamykającego sekcję dokumentacji.
+The main pattern for adding information about code documentation consists of asterisks and a backslash that open and close the documentation section.
 
 ```js
 /**
- * Krótki opis funkcji, zmiennej lub klasy itp.
+ * Short description of the function, variable, or class, etc.
  */
 ```
 
-
 ---
-### Paramtery
+### Parameters
 
-JS może pomóc w dokumentacji zwykłej zmiennej ze wskazaniem na jej typ np. string, number, boolean, array, object, function, etc.
+JSDoc can assist in documenting a regular variable by indicating its type, such as string, number, boolean, array, object, function, etc.
 
 ```js
 /**
- * 
- * documentation name
+ * Documentation name
  * @type {string}
  */
 const documentationName = "JSDoc";
-
 ```
+
 ---
-Tablica zwierające liczby
+Array containing numbers
 ```js
 /**
- * numbers array
+ * Numbers array
  * @type {Array<number>}
  */
-
 const numbers = [1, 2, 3];
 ```
+
 ---
-Przykładowa dokumentacja obiektu
+Sample object documentation
 
 ```js
 /**
  * Droid object
  * @type {{id: number, name: string, class: string}}
- * lub w sposób bardziej rozbudowany...
+ * or in a more detailed way...
  * @property {number} id - Droid id
  * @property {string} name - Droid name
  * @property {string} class - Droid class
  */
-
 const droid = {
 	id: 1,
 	name: "C3PO",
@@ -67,24 +62,24 @@ const droid = {
 };
 ```
 
-Przykładowa dokumentacja funkcji
+Sample function documentation
 
-JSDoc pozwala na dokumentację parametrów wg schematu `@param {type} name - opis`.
+JSDoc allows documenting parameters using the `@param {type} name - description` schema.
 
 ```js
 /**
- * Opis
- * @param {typ parametru} nazwa parametru - opis
- * @returns {typ zwracanych danych} - opis
+ * Description
+ * @param {parameter type} parameter name - description
+ * @returns {return data type} - description
  *
  */
 ```
 
-Przykładowa dokumentacja funkcji
+Sample function documentation
 
 ```js
 /**
- * function calculating sum of two numbers
+ * Function calculating the sum of two numbers
  * @param {number} num1 - First number
  * @param {number} num2 - Second number
  * @returns {number} - The sum of two numbers
@@ -94,49 +89,48 @@ function sum(num1, num2) {
 }
 ```
 
-
 ---
-Sposób na dokumentację klasy
+Documenting a class
+
 ```js
 /**
  * Class to create a user object
  */
 class Droid {
 	/**
-	 * @param {Object} droidInfo  Information about a drodi
+	 * @param {Object} droidInfo - Information about a droid
 	 */
-	constructor(userInfo) {
+	constructor(droidInfo) {
 		/**
-		 * @property {string} name - droid name
+		 * @property {string} name - Droid name
 		 */
 		this.name = droidInfo.name;
 
 		/**
-		 * @property {string} password - User's password
+		 * @property {string} class - Droid class
 		 */
 		this.class = droidInfo.class;
 	}
 
 	/**
 	 * @property {Function} sayHello - Droid's greeting
-	 * @returns void
+	 * @returns {void}
 	 */
 	sayHello() {
-		console.log(`Hello my name is ${this.name}`);
+		console.log(`Hello, my name is ${this.name}`);
 	}
-
+}
 ```
-
 ---
-### Dokumentacja w postaci HTML oraz JSON
+### Documentation in HTML and JSON Format
 
-Instalacji biblioteki [`jsdoc`](https://www.npmjs.com/package/jsdoc) w sposób globalny lub lokalny oraz jej setup pozwala również na automatyczne generowanie dokumentacji w postaci HTML.
+Installing the `jsdoc` library globally or locally and setting it up allows for automatic generation of documentation in HTML format.
 
 ```shell
 npm install --save-dev jsdoc
 ```
 
-Konfiguracja JSDoc `jsodc.json` pozwala na wygenerowanie dokumentacji w postaci HTML w katalogu `docs` oraz wygenerowanie dokumentacji w postaci JSON w katalogu `docs/json`.
+Configuring JSDoc in `jsdoc.json` enables the generation of HTML documentation in the `docs` directory and JSON documentation in the `docs/json` directory.
 
 ```js
 {
@@ -157,16 +151,16 @@ Konfiguracja JSDoc `jsodc.json` pozwala na wygenerowanie dokumentacji w postaci 
 }
 ```
 
-Do package.json dodaj
+Add the following to your package.json file:
 
 ```js
 "doc": "jsdoc -c jsdoc.json"
 ```
 
-Po wywołaniu komendy `npm run doc` wygenerowana dokumentacja zostanie zapisana w katalogu `documentation`.
+After running the command `npm run doc`, the generated documentation will be saved in the `documentation` directory.
 
 ---
-### Źródła
+### Sources
 
 [jsdoc.app](https://jsdoc.app/)
 

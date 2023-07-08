@@ -1,5 +1,5 @@
 ---
-title: 'Cypress - przechodzenie pomiędzy elementami drzewa DOM'
+title: '🌲 Cypress - traversing the DOM tree 🌳'
 date: 2022-01-30 12:00
 category: e2e
 draft: false

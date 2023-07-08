@@ -5,28 +5,29 @@ category: api
 thumbnail: { thumbnailSrc }
 tags: ['pactumJS', 'js', 'api testing']
 draft: true
+lang: 'en'
 ---
 
-## Wprowadzenie
+## Introduction
 
-Celem poniższego tekstu będzie dalsze przedstawienie możliwości testowania API przy pomocy pactumJS, tym razem bazując na konkretnych przykładach.
+The aim of this text is to further explore the capabilities of API testing using PactumJS, this time based on specific examples.
 
-dzisiejszy wpis powstał w ramach zasady opisywanej przeze mnie w innym miejscu (patrz: 'Dobre zasady testowania') -> AAA (Arrange, Act, Assert) Organizowanie/Przeprowadzenie/Sprawdzenie.
+Today's post was created following the principle described by me elsewhere (see: 'Good Testing Practices') -> AAA (Arrange, Act, Assert) Organize/Act/Assert.
 
-W ramach pierwszej części zaproponuję znalezienie odpowiedniego API do testowania - korzystając z zasobów opublikowanych na [rapidAPI](https://rapidapi.com/) - przy pomocy tego portalu możemy wyszukać (oraz wykupić dostęp jeśli istnieje taka potrzeba) interesujące nas API przy pomocy, którego możemy stworzyć własną stronę/porta/apkę etc. Plus tego portalu jest taki, że w jednym miejscu grupuje wiele różnych api i w czytelny i zunifikowany sposób przedstawia wgląd w ich dokumentację.
+In the first part, I will suggest finding a suitable API for testing, using the resources available on [rapidAPI](https://rapidapi.com/). Through this platform, we can search for (and purchase access if needed) APIs that interest us and can be used to create our own website, portal, app, etc. The advantage of this platform is that it brings together many different APIs in one place and presents their documentation in a clear and unified way.
 
-Dużo proponowanych dostępów do API jest freemium, tzn mają ograniczenia w ilości requestów, które można wykonać w sposób darmowy. Na potrzeby moich ćwiczeń wykorzystam api portalu [imgur.com/](https://imgur.com/) - w darmowej opcji pozwala na 100k requestów miesięcznie + posiada requesty typu GET/PUT/POST/DELETE - ze względu na to, że aby skorzystać nawet z darmowej opcji należy podać dane karty postanowiłem ostatecznie wykorzystać informacje znajdujące się na stronie [apidocs.imgur.com](https://apidocs.imgur.com/) tzn u samego źródła, gdzie API jest dobrze udokumentowane (przygotowana jest nawet kolekcja w Postmanie).
+Many of the proposed API accesses are freemium, meaning they have limitations on the number of requests that can be made for free. For the purpose of my exercises, I will use the API of [imgur.com/](https://imgur.com/), which, in the free option, allows for 100k requests per month and supports GET/PUT/POST/DELETE requests. However, to even use the free option, you need to provide credit card information. Therefore, I ultimately decided to utilize the information available on the [apidocs.imgur.com](https://apidocs.imgur.com/) website, which is the official source and provides well-documented API information (there is even a Postman collection prepared).
 
-## 1. Autoryzacja
+## 1. Authorization
 
-Po utworzeniu konta na imgur należy zerejestrować aplikacjię odwiedzając stronę [api.imgur.com/oauth2/addclient](https://api.imgur.com/oauth2/addclient) i wypełnić formularz (na początek wybrałem opcję "OAuth 2 authorization without a callback URL"). Należy zapisać Client ID oraz Client Secret (ja takie rzeczy przechowuje w Bitwarenie w ramach aplikacji w pliku .env).
-Wgląd w opcje "zarejestrowanej aplikacji" mamy dostęp pod tym linkiem [imgur.com/account/settings/apps](https://imgur.com/account/settings/apps)
+After creating an account on imgur, you need to register an application by visiting the [api.imgur.com/oauth2/addclient](https://api.imgur.com/oauth2/addclient) page and filling out the form (for starters, I chose the "OAuth 2 authorization without a callback URL" option). Make sure to save the Client ID and Client Secret (I store such information securely, for example in a .env file using Bitwarden as part of my application).
+You can access the options for your "registered application" at this link: [imgur.com/account/settings/apps](https://imgur.com/account/settings/apps)
 
 [apidocs.imgur.com/#authorization-and-oauth](https://apidocs.imgur.com/#authorization-and-oauth)
 
-### Access token i Postman
+### Access Token and Postman
 
-Imgur bazuje na autoryzacji typu OAuth2 - niestety w tym momencie w sieci brak patentów poradzenie sobie z tego typu autoryzacją z poziomu pactumJS. W przyszłości być może zastosowanie osobnej biblioteki do tego być może okazać się pomocne -> np. [simple-oauth2](https://www.npmjs.com/package/simple-oauth2)  🧐 🤔 - sprawa do przemyślenia i zbadania. / Na szybko znalazłem taki przykład testu w sieci [github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/simple-oauth2/simple-oauth2-tests.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/simple-oauth2/simple-oauth2-tests.ts).
+Imgur uses OAuth2 authorization. Unfortunately, there is currently no built-in support for handling this type of authorization in pactumJS. In the future, using a separate library for this purpose may be helpful, such as [simple-oauth2](https://www.npmjs.com/package/simple-oauth2) 🧐 🤔 - this is something to consider and investigate. / I quickly found an example test using simple-oauth2 on [github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/simple-oauth2/simple-oauth2-tests.ts](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/simple-oauth2/simple-oauth2-tests.ts).
 
 ```
      +----------+
@@ -62,24 +63,23 @@ Imgur bazuje na autoryzacji typu OAuth2 - niestety w tym momencie w sieci brak p
 
 ```
 
-(źródło grafiki: [The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749))
+(source: [The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749))
 
-W przypadku autoryzacji typu OAuth sprawa wydaje się być prostsza i przykłady jej zastosowania w sieci są obecne i możliwe do znalezienia np. [www.zeljkovic.sh - REST API test automation with PactumJS](https://www.zeljkovic.sh/rest-api-test-automation-with-pactumjs/), - być może serwis flickr'a dostarcza odpowiednie API do przetestowania tego procesu [https://www.flickr.com/services/api/auth.oauth.html](https://www.flickr.com/services/api/auth.oauth.html#request_token)
+When it comes to OAuth authorization, the matter seems to be simpler, and examples of its usage can be found online, such as [www.zeljkovic.sh - REST API test automation with PactumJS](https://www.zeljkovic.sh/rest-api-test-automation-with-pactumjs/). Perhaps the Flickr service provides appropriate APIs for testing this process [https://www.flickr.com/services/api/auth.oauth.html](https://www.flickr.com/services/api/auth.oauth.html#request_token).
 
-W obecnym przypadku wykorzystamy Postmana oraz opisane kroki na str [apidocs.imgur.com/#authorization-and-oauth](https://apidocs.imgur.com/#authorization-and-oauth) w celu uzyskania tokenu, a następnie posłużymy się nim do stworzenia testów. (Być może skorzystanie z tego api za pośrednictwem serwisu rapidApi spowodowało by że ten problem by zniknął)
-
----
-
-AAA (Arrange, Act, Assert) Organizowanie/Przeprowadzenie/Sprawdzenie - po raz kolejny, tym razem w przypadku stworzenia testów API 😉
-
-Organizowanie - wysłanie zapytania, przygotowanie headerów, body itp. dążącego do wywołania konkretnego stanu (przeprowadzenie) oraz przy pomocy asercji sprawdzenie czy otrzymane dane są przedstawiają oczekiwany stan.
-
-
-`inspect()` łączy się z get w celu wyświetlenia danych w konsoli
+In the current case, we will use Postman and follow the steps described on [apidocs.imgur.com/#authorization-and-oauth](https://apidocs.imgur.com/#authorization-and-oauth) to obtain a token, and then use that token to create tests. (Using this API through the RapidAPI service might solve this problem.)
 
 ---
 
-Źródła:
+AAA (Arrange, Act, Assert) - Organize, Act, Assert - once again, this time in the context of creating API tests 😉
+
+Organize - send a request, prepare headers, body, etc., to achieve a specific state (Act), and then use assertions to verify if the received data represents the expected state (Assert).
+
+`inspect()` is used with `get` to display data in the console.
+
+---
+
+Source:
 
 [Save request and response json details in variables](https://github.com/pactumjs/pactum/discussions/81)
 

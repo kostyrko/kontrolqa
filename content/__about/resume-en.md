@@ -4,13 +4,13 @@ date: 2023-07-03 16:21:13
 lang: 'en'
 ---
 
-# Kontrolqa
+# Controlqa
 
 <div align="center">
 
 🚧  
 
-Under construction
+I am working as a software quality assurance @Netguru
 
 🚧
 

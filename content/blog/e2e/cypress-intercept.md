@@ -1,5 +1,5 @@
 ---
-title: 'Cypress: cy.intercept() - przechwytywanie zapytań HTTP'
+title: '🌲 Cypress: cy.intercept() - catching HTTP requests 🕸️'
 date: 2022-02-02 10:00
 category: e2e
 draft: false

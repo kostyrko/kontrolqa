@@ -1,8 +1,8 @@
 module.exports = {
-  title: `Kontrolqa 👾`,
+  title: `Controlqa 👾`,
   description: `Software Quality Assurance`,
   author: `kostyrko`,
-  introduction: `Blog focused on Software Quality Assurance topics with emphasis on test automation`,
+  introduction: `Software Quality Assurance | Test Automation`,
   siteUrl: `https://kostyrko.github.io/kontrolqa/`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account

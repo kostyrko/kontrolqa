@@ -1,14 +1,11 @@
 ---
-title: 'Cypress - introduction'
+title: '🌲 Cypress - introduction'
 date: 2022-01-09 12:00
 category: e2e
 tags: ["cypress", "test automation", "e2e", "mocha", "chai"]
 draft: false
 lang: 'en'
 ---
-
-![](https://www.cypress.io/static/cypress-io-logo-social-share-8fb8a1db3cdc0b289fad927694ecb415.png)
-
 
 ## Cypress an introduction
 
@@ -179,7 +176,7 @@ It retrieves the current URL of the page and stores it as a string.
 cy.url().should("include", "http://example.com")
 ```
 ---
-### Strony/projekty do testowania 
+### Pages/projects one can use for test automation practices 
 
 [cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app)
 
@@ -204,7 +201,7 @@ cy.url().should("include", "http://example.com")
 
 ---
 
-Źródła
+Sources:
 
 [www.chaijs.com/api/assert](https://www.chaijs.com/api/assert/)
 
