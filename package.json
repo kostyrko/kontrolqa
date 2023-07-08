@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-bee",
+  "name": "Controlqa",
   "private": true,
-  "description": "Gatsby blog starter template",
-  "version": "0.1.0",
-  "author": "Jbee[JaeYeopHan]<ljyhanll@gmail.com>",
+  "description": "Gatsby powered blog",
+  "version": "0.1.1",
+  "author": "",
   "bugs": {
-    "url": "https://github.com/JaeYeopHan/gatsby-starter-bee/issues"
+    "url": "https://kostyrko.github.io/kontrolqa/"
   },
   "dependencies": {
     "flexsearch": "^0.7.21",
@@ -70,7 +70,7 @@
     "recursive-readdir": "^2.2.2",
     "signale": "^1.3.0"
   },
-  "homepage": "https://github.com/JaeYeopHan/gatsby-starter-bee#readme",
+  "homepage": "https://github.com/kostyrko/kontrolqa#readme",
   "keywords": [
     "gatsby"
   ],
@@ -85,8 +85,6 @@
     "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
     "build": "gatsby build",
     "gh:deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"

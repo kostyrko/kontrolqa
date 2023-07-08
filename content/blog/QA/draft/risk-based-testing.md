@@ -1,6 +1,6 @@
 ---
-title: 'Risk based testing - testowanie bazujące na ocenie ryzyka'
-date: 2022-03-26 10:00
+title: 'Risk based testing'
+date: 2023-03-26 10:00
 category: qa
 draft: true
 ---
@@ -65,14 +65,7 @@ Minor/Visible/Interruption
 
 Risk probability powinno zostać ocenioną przez osoby posiadające techniczne kompetencje w zespole.
 
-
-
-
 Wprowadzenie oznaczeń w trakcie produkcji np. Severity 1-4 / Priority 1-4 / Criticality 1-4
-
-
-
-https://www.guru99.com/risk-based-testing.html - identyfikacja ryzyka
 
 
 
@@ -90,3 +83,4 @@ https://www.guru99.com/risk-based-testing.html - identyfikacja ryzyka
 [What Is Software Testing Life Cycle (STLC)?](https://www.softwaretestinghelp.com/what-is-software-testing-life-cycle-stlc/)
 
 [Risk-Based Testing Averse](https://qahiccupps.blogspot.com/2022/06/risk-based-testing-averse.html)
+

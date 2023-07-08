@@ -1,71 +1,78 @@
 ---
-title: '🤝 PactumJS - wprowadzenie'
+title: '🤝 PactumJS - introduction'
 date: 2022-02-19 18:02:00
 category: api
 thumbnail: { thumbnailSrc }
 tags: ["pactumJS", "js", "api testing"]
 draft: false
+lang: 'en'
 ---
 
-### Wprowadzenie
+### Introduction
 
-Jednym z popularniejszych narzędzie to testowania API jest Postman 🚀 📮 i z pewnością jest dobrym wyborem kiedy szukamy rozwiązania posiadającego własne GUI - alternatywą dla takiego rozwiązania są narzędzia, które pozwalają na pisanie testów przy pomocy Pythona ([Requests](https://docs.python-requests.org/en/latest/)) czy JS ([PactumJS](https://pactumjs.com/) / [SuperTest](https://github.com/visionmedia/supertest) / [Frisby.js](https://docs.frisbyjs.com/) / [Chakram](http://dareid.github.io/chakram/)) - na tym tle najlepiej zdaje się wypadać **PactumJS** (patrz porównanie -> [API Testing Tools in JavaScript](https://dev.to/asaianudeep/api-testing-tools-in-javascript-22d8)) i to właśnie tej bibliotece poświęciłem swoją uwagę.
+One of the most popular tools for API testing is Postman 🚀 📮, and it is certainly a good choice when looking for a solution with its own GUI. An alternative to such a solution is tools that allow writing tests using Python ([Requests](https://docs.python-requests.org/en/latest/)) or JavaScript ([PactumJS](https://pactumjs.com/) / [SuperTest](https://github.com/visionmedia/supertest) / [Frisby.js](https://docs.frisbyjs.com/) / [Chakram](http://dareid.github.io/chakram/)). Among them, **PactumJS** seems to be the most promising (see comparison -> [API Testing Tools in JavaScript](https://dev.to/asaianudeep/api-testing-tools-in-javascript-22d8)), and it is this library that I have focused my attention on.
 
-Darmowe strony przydatne do testowania API: 
-* [httpbin.org](http://httpbin.org/)
-* [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/)
-* [reqres.in](https://reqres.in/)
+Useful free websites for API testing:
+- [httpbin.org](http://httpbin.org/)
+- [jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/)
+- [reqres.in](https://reqres.in/)
 
+### Environment Setup
 
-### Przygotowanie środowiska
+**Prerequisite**: `node.js` 📂 is installed on the local machine.
 
-**Założenie wstępne**: `node.js` 📂  jest zainstalowany na lokalnej maszynie.
+Installing PactumJS
 
-Instalacja PactumJS
+```bash
+npm install pactum
+```
 
-    npm i pactum
+Installing the chosen test runner, either **Mocha** or **Cucumber**
 
-Instalacja wybranego test runnera **mocha** albo **cucumber**
+```bash
+npm install mocha
+# or
+npm install @cucumber/cucumber
+```
 
-    npm i mocha
-    # lub
-    npm i @cucumber/cucumber
+Creating a Test
 
-Stworzenie 1 testu
-
-```js
+```javascript
 const { spec } = require("pactum");
 
 it("should yield HTTP status code 200", async () => {
-    await
-    spec()
-    .get("http://jsonplaceholder.typicode.com/users/1")
-    .expectStatus(200);
-})
+    await spec()
+        .get("http://jsonplaceholder.typicode.com/users/1")
+        .expectStatus(200);
+});
 ```
 
-Wywołanie testu w terminalu
 
-    npx mocha pactumJSTest.js
 
-Jako test runner może również posłużyć Jest
+### Running the Test in the Terminal
 
-Instalacja Jest
+```bash
+npx mocha pactumJSTest.js
+```
 
-    npm i jest
+Jest can also be used as the test runner.
+
+Installing Jest:
+
+```bash
+npm install jest
+```
 
 [basdijkstra/api-testing-js-pactum (Bas Dijkstra)](https://github.com/basdijkstra/api-testing-js-pactum)
-Przygotowanie testu opartego na POST - stworzenie nowego postu (źródło przykładu: )
 
-```JS
+Preparing a POST-based test - Creating a new post (example source: )
+
+```javascript
 // userdata.test.js
 const pactum = require('pactum');
 
-
 describe('Posting a new post item', () => {
-
     test('should yield HTTP status code 201', async () => {
-
         let new_post = {
             "title": "My awesome new post title",
             "body": "My awesome new post body",
@@ -79,52 +86,50 @@ describe('Posting a new post item', () => {
     });
 });
 ```
-Wywołanie testu
 
-    npx jest
+Running the test:
 
+```bash
+npx jest
+```
 
----
-### Metody do tworzenia zapytań
+### Request Creation Methods
 
-`pactum.spec()` - podstawowa metoda do wywoływania testów przy pomocy pactumJS
+`pactum.spec()` - The basic method for making requests using PactumJS.
 
-Podstawowe metody do tworzenia zapytań get/post/put/delete/patch wykorzystujemy poprzez łączenie z główną metodą `pactum.spec()`
+The basic methods for creating requests (GET/POST/PUT/DELETE/PATCH) are used by combining them with the main `pactum.spec()` method.
 
-```js
+```javascript
 await pactum.spec().get('http://domain.com/user');
 await pactum.spec().post('http://domain.com/user');
 await pactum.spec().put('http://domain.com/user');
 await pactum.spec().patch('http://domain.com/user');
 await pactum.spec().delete('http://domain.com/user');
 ```
-----
-#### Dodatkowe parametry
 
-W celu przesłania dodatkowych parametrów do zapytania, możemy korzystać z przeznaczonych do tego metod (osobno lub poprzez łącznie/łańcuchowanie)
+#### Additional Parameters
 
+To pass additional parameters to the request, you can use the dedicated methods separately or chain them together.
 
-|  |  | 
-|---|---|
-| `withMethod` | zapytanie z metodą | 
-| `withPath` | zapytanie ze ścieżką | 
-| `withPathParams` | [zapytanie z parametrem](https://pactumjs.github.io/#/request-making?id=path-params) |
-| `withQueryParams` | zapytanie z parametrami zapytania |
-| `withHeaders` | zapytanie z headerem |
-| `withCookies` | zapytanie z ciasteczkami |
-| `withBody` | zapytanie z body (zawartością) |
-| `withJson` | zapytanie z wykorzystaniem Jsona |
-| `withAuth` | zapytanie z uwierzytelnianiem |
+| Method | Description |
+|--------|-------------|
+| `withMethod` | Sets the request method |
+| `withPath` | Sets the request path |
+| `withPathParams` | Sets the path parameters |
+| `withQueryParams` | Sets the query parameters |
+| `withHeaders` | Sets the request headers |
+| `withCookies` | Sets the request cookies |
+| `withBody` | Sets the request body |
+| `withJson` | Sets the request body as JSON |
+| `withAuth` | Sets the request authentication |
 
-Pełna lista: [pactumjs.github.io/#/request-making?id=spec](https://pactumjs.github.io/#/request-making?id=spec)
-
-
+Full list: [pactumjs.github.io/#/request-making?id=spec](https://pactumjs.github.io/#/request-making?id=spec)
 
 ---
-**Path params** (źródło przykładu: [pactumjs.github.io](https://pactumjs.github.io/#/request-making?id=path-params))
 
-```js
+**Path Params** (example source: [pactumjs.github.io](https://pactumjs.github.io/#/request-making?id=path-params))
 
+```javascript
 await pactum.spec()
   .get('/api/project/{project}/repo/{repo}')  // dynamic url
   .withPathParams('project', 'project-name')  // key-value pair
@@ -133,39 +138,35 @@ await pactum.spec()
   })
   .expectStatus(200);
 
-//  The above would result in a url like - /api/project/project-name/repo/repo-name
+// The above would result in a URL like - /api/project/project-name/repo/repo-name
 ```
 
-**Authentication** (źródło przykładu: [pactumjs.github.io](https://pactumjs.github.io/#/request-making?id=username-amp-password))
+**Authentication** (example source: [pactumjs.github.io](https://pactumjs.github.io/#/request-making?id=username-amp-password))
 
-```js
-
+```javascript
 await pactum.spec()
   .get('some-url')
   .withAuth('my-username', 'super-secret-password')
   .expectStatus(200);
-
 ```
 
-
-
 ---
-### Walidacja zapytań
+### Request Validation
 
-| | | |
-|---|---|---|
-| `expect` | _ | podstawowa asercja |
-|`expectStatus`|	status	|sprawdza status HTTP|
-|`expectHeader`|	header|	sprawdza header HTTP / klucz + wartość|
-|`expectHeaderContains`|	headerContains|	sprawdza header HTTP / klucz + częściowy klucz|
-|`expectBody`|	body	|sprawdza dokładną zawartość body|
-|`expectBodyContains`|	|bodyContains	|sprawdza czy body zawiera wartość|
-|`expectJson`|	json	|sprawdza dokładną zawartość obiektu json|
-|`expectError`|	error	|sprawdza błędy sieci/odpowiedzi|
+| Command | Alias | Description |
+|---------|-------|-------------|
+| `expect` | - | basic assertion |
+| `expectStatus` | status | checks the HTTP status |
+| `expectHeader` | header | checks the HTTP header / key + value |
+| `expectHeaderContains` | headerContains | checks the HTTP header / key + partial value |
+| `expectBody` | body | checks the exact body content |
+| `expectBodyContains` | - | bodyContains | checks if the body contains a value |
+| `expectJson` | json | checks the exact JSON object content |
+| `expectError` | error | checks for network errors/response errors |
 
-Pełna lista: [pactumjs.github.io/#/response-validation](https://pactumjs.github.io/#/response-validation)
+Full list: [pactumjs.github.io/#/response-validation](https://pactumjs.github.io/#/response-validation)
 
-**Status & Headers & Response Time** źródło: [pactumjs.github.io](https://pactumjs.github.io/#/response-validation?id=status-amp-headers-amp-response-time)
+**Status & Headers & Response Time** Source: [pactumjs.github.io](https://pactumjs.github.io/#/response-validation?id=status-amp-headers-amp-response-time)
 ```js
 await pactum.spec()
   .get('https://jsonplaceholder.typicode.com/posts/1')
@@ -176,7 +177,7 @@ await pactum.spec()
   .expectResponseTime(100);
 ```
 
-**expectBody** źródło: [pactumjs.github.io](https://pactumjs.github.io/#/response-validation?id=expectbody)
+**expectBody** Source: [pactumjs.github.io](https://pactumjs.github.io/#/response-validation?id=expectbody)
 ```js
 await pactum.spec()
   .get('api/health')
@@ -184,9 +185,8 @@ await pactum.spec()
   .expectBody('OK');
 ```
 
-
 ---
-Źródła: 
+Sources: 
 
 [GH - pactumjs/pactum](https://github.com/pactumjs/pactum)
 

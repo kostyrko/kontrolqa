@@ -8,70 +8,61 @@ draft: false
 ---
 
 
-## Wprowadzenie
+## Introduction
 
-**Cypress Test Studio** - jest narzędziem (w wersji Beta w momencie pisania tego artykułu) pozwalającym na tworzenie testów w Cypressie (tryb Open) bez pisania kodu... Ponieważ ta funkcjonalność jest jedynie w wersji beta jest ograniczona do zaledwie paru funkcji (check, select,click,type,uncheck) oraz ograniczonej liczby asercji.
+**Cypress Test Studio** is a tool (in Beta version at the time of writing this article) that allows creating tests in Cypress (in Open mode) without writing code. Since this feature is still in Beta, it is limited to a few functions (check, select, click, type, uncheck) and a limited number of assertions.
 
-Do czego oraz dla kogo zatem może być przydatne Cypress Studio
+So, what can Cypress Test Studio be useful for and who can benefit from it?
 
-* dla osób zaczynających przygodę z Cypressem/testami e2e
-* do stworzenie  w szybki sposób jednorazowego testu pre-MVP
-* do ćwiczenia oraz zapoznania się ze składnią JS/Cypress osób, które do tej pory nie miały do tej pory styczności z Cypressem i nie posiadają wiedzy na temat JS
+* For beginners starting their journey with Cypress or end-to-end testing
+* For quickly creating one-time tests before the MVP stage
+* For practicing and getting familiar with the syntax of JavaScript/Cypress for those who haven't had previous experience with Cypress and have no knowledge of JS
 
-Z pewności na tym etapie rozwoju **Cypress Test Studio** NIE będzie przydatne do
-* tworzenia testów długoterminowych lub wielokrotnego użytku
+However, at this stage of development, **Cypress Test Studio** may NOT be suitable for:
+
+* Creating long-term or reusable tests
 
 ---
-## Użytkowanie
 
+## Usage
 
-Instalujemy Cypressa
+Install Cypress:
 
 ```shell
-npm i cypress
+npm install cypress
 ```
 
-Konfigurowaniu możliwość korzystania z **Cypress Test Studio** w pliku **cypress.json** 
+Configure the ability to use **Cypress Test Studio** in the `cypress.json` file:
 
-```js
+```json
 {
-    "experimentalStudio": true
+  "experimentalStudio": true
 }
 ```
 
-Tworzymy plik w folderze integrations np. `/cypress/integration/sample_spec.js`
-
-oraz wypełniamy go podstawowym kodem następnie odnajdujemy nasz test w Cypress test runnerze i włączamy go
+Create a file in the `integration` folder, e.g., `/cypress/integration/sample_spec.js`, and fill it with basic code. Then find your test in the Cypress Test Runner and run it:
 
 ```js
 describe('example to-do app', () => {
-    it('should add a todo', () => {
-        cy.visit('https://www.saucedemo.com/')
-
-    })
+  it('should add a todo', () => {
+    cy.visit('https://www.saucedemo.com/')
+  })
 })
 ```
 
+When you run the test initially, in the top right corner of the left test dock in the Cypress Test Runner, you will find a magic wand icon (tooltip: Add Commands to Test). Clicking on it will take you to the **studio** mode.
 
-Gdy włączymy wstępnie napisany przez nas test - w prawym górnym roku lewego docku z testami znajdziemy ikonę różdżki (tool tip: Add Commands to Test).
+Now, when you click in the browser in the right pane, you will notice that new commands appear under the "Studio Commands" header in the left dock where the tests are listed. This allows you to add additional commands to your test.
 
-Po jej wciśnięciu przechodzimy do tryby **studio**
+Right-clicking on a specific field should expand a menu that allows you to add a basic assertion.
 
+After completing the test content, click **Save commands** (button).
 
-Teraz gdy klikamy w prawym oknie (przeglądarka), zauważymy że w lewym docku gdzie znajdują się testy pojawiają się nowe komendy pod nagłówkiem "Studio Commands" - to pozwala nam na uzupełnienie testu o kolejne komendy. 
-
-
-Po kliknięciu prawym klawiszem myszy w dane pole powinno rozwinąć się menu, które pozwoli nam na dodanie podstawowej asercji.
-
-
-Po uzupełnieniu treści testu należy kliknąć **Save commands** (button).
-
-
-Test się wykona a w kodzie naszego tekstu pojawi nowe komendy oznaczone **Generated with Cypress Studio** - te mogą stać się dobrym punktem wyjścia do dalszego ulepszenia testu.
+The test will run, and in the code of your test file, you will see new commands marked as **Generated with Cypress Studio**. These commands can serve as a starting point for further test improvements.
 
 
 
-źródła/materiały
+Sources
 
 [cypress.io/cypress-studio](https://docs.cypress.io/guides/core-concepts/cypress-studio#Overview)
 

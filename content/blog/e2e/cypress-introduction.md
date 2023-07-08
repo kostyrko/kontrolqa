@@ -1,27 +1,31 @@
 ---
-title: 'Cypress - wprowdzenie'
+title: '🌲 Cypress - introduction'
 date: 2022-01-09 12:00
 category: e2e
+tags: ["cypress", "test automation", "e2e", "mocha", "chai"]
 draft: false
+lang: 'en'
 ---
 
-![](https://www.cypress.io/static/cypress-io-logo-social-share-8fb8a1db3cdc0b289fad927694ecb415.png)
+## Cypress an introduction
+
+Cypress refers to the Cypress testing library. It is based on the Mocha testing framework (test structure) and Chai (assertions, functions, invocations).
 
 
-## Cypress wprowadzenie
-
-Cypress jest oparty o bibl. Mocha (struktura test) oraz Chai (asercje, funkcje, wywołania).
 #### Mocha 🥤 
 
-`describe` - opis testu / grupowanie serii tekstu / przyjmuje 2 argumenty - nazwę testu i funkcję (call back function)
+`describe` - test description / grouping of a series of tests / takes 2 arguments - test name and a function (callback function).
 
-`it` - test / pojedynczy test / przyjmuje 2 argumenty - nazwę testu i funkcję (call back function)
+`it` - test case / individual test / takes 2 arguments - test name and a function (callback function).
 
-`.only` - wyłącza wszystkie inne testy
+`.only` - excludes all other tests
 
 #### Cypress reference types - intellisense in VS code
 
     /// <reference types="cypress" />
+
+
+Reference cypress at the beginning of you testing file for intellisense to catch the sense/purpose of the code
 
 ### Cypress podstawowe komendy
 
@@ -29,68 +33,71 @@ Cypress jest oparty o bibl. Mocha (struktura test) oraz Chai (asercje, funkcje, 
 
 `cy.click()` - kliknięcie na element // przyjmuje również argumenty np. `{force: true}` (używać np. jeśli element ma 0x0px albo jest przysłonięty przez inny element, innymi słowy jeśli istnieje w DOM ale nie jest widoczny)
 
-`cy.type()` - wpisanie tekstu do elementu
+`cy.visit()` - access a page/subpage.
 
+`cy.click()` - click on an element // also accepts arguments like {force: true} (use it if the element has 0x0px dimensions or is covered by another element, in other words, if it exists in the DOM but is not visible).
+
+`cy.type()` - type text into an element.
 #### selektory 🏹 
 
-Bazujący na html tagu `<input>`
+Based on the HTML tag `<input>`
 ```js
 cy.get("input")
 ```
-Bazujący na atrybucie elementu oraz jego wartości
+Based on the element's attribute and its value
 ```js
 cy.get("input[name='first_name']")
 ```
-Bazujący na id elementu
+Based on the element's ID
 ```js
 cy.get("#first_name")
 ```
-Bazujący na klasie elementu
+Based on the element's class
 ```js
 cy.get(".form-control")
 ```
-Bazujący na wielu klasach
+Based on multiple classes
 ```js
 cy.get("[class='navbar navbar-expand-lg navbar-light bg-light']")
 ```
-Bazujący na wielu atrybutach
+Based on multiple attributes
 ```js
 cy.get("[name='email'][placeholder='Email Address']")
 ```
-Bazujący na xpath
+Based on XPath
 ```js
 cy.xpath("//input[@name='first_name']")
 ```
-### [Asercje/Założenia (biblioteka Chai)](https://docs.cypress.io/guides/references/assertions#Chai)
+### [Assertions (Chai library)](https://docs.cypress.io/guides/references/assertions#Chai)
 
-Często używane asercje:
+Commonly used assertions:
 
-Długość
+Length
 ```js
 cy.get("input").should("have.length", 1)
 ```
-Klasa
+Class
 ```js
 cy.get("input").should("have.class", "form-control")
 ```
-Wartość
+Velue
 ```js
 cy.get("input").should("have.value", "xyz")
 ```
-Zawartość tekstu
+Text content
 ```js
 cy.get("input").should("have.text", "xyz")
 ```
-Widoczność
+Visibility
 ```js
 cy.get("input").should("be.visible")
 ```
 
-Obecność elementu
+Existence of element
 ```js
 cy.get("input").should("exist")
 ```
-Stan elementu
+State of given element i.e. input
 ```js
 cy.get("input")
         .should("be.disabled")
@@ -100,14 +107,14 @@ cy.get("input")
 cy.get("input").should("be.checked")   
 ```
 
-Łączenie asercji
+Assertion chaining
 ```js
 cy.get("input")
         .should("be.disabled")
         .should("be.visible")
 ```
 
-`expect` - asercja (Chai), która pozwala na sprawdzenie założenia w ramach enkapsulacji funckcji wywołanej przez zastosowanie then() / obsługi promisa.
+`expect` - assertion (Chai) that allows checking assumptions within the encapsulation of a function invoked by using then() / promise handling.
 ```js
 cy.get("input")
         .should("have.value", "xyz")
@@ -116,9 +123,9 @@ cy.get("input")
         })
 ```
 
-#### Zawiera/Contains
+#### Contains
 
-Asercja sprawdzająca czy element zawiera znaki
+Assertion checks if a element contains given property
 ```js
 cy.get("input")
         .should("contain", "xyz")
@@ -126,7 +133,7 @@ cy.get("input")
 
 ### cy.document()
 
-Zwraca obiekt/dokument obecnie aktywnego okna (window.document object) - pozwalając tym samym na sprawdzenie wszystkich metod z DOM
+It returns the object/document of the currently active window (window.document object), thereby allowing access to all DOM methods.
 ```js
 cy.document()
         .should("have.property", "charset").and("eq", "UTF-8")
@@ -142,7 +149,6 @@ cy.document()
         .should("have.property", "content")
         .should("have.property", "status")
         .should("have.property", "statusText")
-        .should("have.property", "ok")
         .should("have.property", "redirected")
         .should("have.property", "inError")
         .should("have.property", "error")
@@ -157,20 +163,20 @@ cy.document()
 ```
 ### cy.title()
 
-Sprawdza tytuł strony (`<title>`)
+Checks page title: (`<title>`)
 ```js
 cy.title().should("include", "Test Title")
 ```
 
 ### cy.url()
 
-
-Sprawdza zbiera aktualny URL strony i przechowuje go jako łańcuch znaków/string 
+It retrieves the current URL of the page and stores it as a string.
+ 
 ```js
 cy.url().should("include", "http://example.com")
 ```
 ---
-### Strony/projekty do testowania 
+### Pages/projects one can use for test automation practices 
 
 [cypress-realworld-app](https://github.com/cypress-io/cypress-realworld-app)
 
@@ -195,7 +201,7 @@ cy.url().should("include", "http://example.com")
 
 ---
 
-Źródła
+Sources:
 
 [www.chaijs.com/api/assert](https://www.chaijs.com/api/assert/)
 

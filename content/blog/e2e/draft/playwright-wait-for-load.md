@@ -1,6 +1,6 @@
 ---
 title: 'Playwright - Wait for the page to load'
-date: 2022-02-21 10:00
+date: 2023-07-03 10:00
 category: e2e, playwright
 draft: true
 ---

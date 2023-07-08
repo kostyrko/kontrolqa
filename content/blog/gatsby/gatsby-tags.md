@@ -1,13 +1,14 @@
 ---
-title: 🎩 Gatsby dodanie tagów
+title: 🎩 Gatsby - adding tags to blog posts
 date: 2022-03-05 22:02:71
 category: gatsby
 thumbnail: { thumbnailSrc }
 draft: false
 tags: ["Gatsby", "blog", "tags"]
+lang: 'en'
 ---
 
-Zapis w metadanych w postaci tablicy przechowującej łańcuchy znaków
+Storing strings as an array in metadata.
 
 ```js
 title: Gatsby dodanie tagów
@@ -18,7 +19,7 @@ draft: true
 tags: ["Gatsby", "blog", "tags"]
 ```
 
-`gatsby-node.js`
+`gatsby-node.js` - add tags in `frontmatter`
 
 ```js
 return graphql(
@@ -44,6 +45,7 @@ return graphql(
 
 ---
 GraphQL query
+
 ```js
 query MyQuery {
   allMarkdownRemark {
@@ -55,7 +57,7 @@ query MyQuery {
 }
 ```
 
-Zwrot 
+Returned object 
 
 ```js
 {
@@ -81,7 +83,7 @@ Zwrot
 ```
 ---
 
-dodanie wartości do zapytania GraphQL
+adding values to GraphQL query
 
 `templates/blog-post.js`
 
@@ -116,7 +118,8 @@ export const pageQuery = graphql`
 `
 ```
 
-oraz do renderowanie
+as well as to rendering
+
 ```js
 import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
@@ -140,7 +143,7 @@ export default ({ data, pageContext, location }) =>
       //[..]
 ```
 ---
-docelowo tu pojawią się tagi w formie linków `<a>` odprowadzających do stron z tagami
+In the future, tags in the form of `<a>` links will appear here, leading to pages with tags.
 
 `tags/index.jsx`
 ```js
@@ -166,7 +169,7 @@ export const Tags = ({ tags }) => {
 ```
 
 ---
-Źródła: 
+Source: 
 
 [How to add Tags to your Gatsby Blog](https://fek.io/blog/how-to-add-tags-to-your-gatsby-blog)
 
