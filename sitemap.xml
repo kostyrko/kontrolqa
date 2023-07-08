@@ -9,9 +9,9 @@
 <url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/e2e/cypress-intercept/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/e2e/cypress-dom/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/e2e/cypress-commands/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/e2e/cypress-wprowadzenie-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/e2e/cypress-wprowadzenie/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/QA/dobre-zasady-testowania/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/e2e/cypress-introduction-2/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/e2e/cypress-introduction/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/e2e/basic-good-practices-test-automation/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://kostyrko.github.io/kontrolqa/kontrolqa/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
