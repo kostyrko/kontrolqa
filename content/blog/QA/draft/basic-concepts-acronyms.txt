@@ -1,0 +1,25 @@
+---
+title: ''
+date: 2021-XX-XX 10:00
+category: qa
+draft: true
+tags: ["qa", "literatura", "książki"]
+---
+
+
+Testing concepts
+
+Keyword-driven Testing
+
+Page Object Model
+
+Data Driven Testing
+
+Behavior Driven Testing
+
+
+Scripting/programming - good practices acronyms
+
+KISS
+
+YAGIN

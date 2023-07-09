@@ -1,0 +1,1 @@
+https://github.com/NoriSte/ui-testing-best-practices/blob/master/sections/tools/visual-regression-testing.md
