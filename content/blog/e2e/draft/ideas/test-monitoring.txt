@@ -1,0 +1,11 @@
+Test monitoring and monitoring tests
+
+Monitoring system
+
+https://dev.to/noriste/the-concept-of-monitoring-tests-4l5j
+
+Monitoring metrics
+
+https://www.browserstack.com/guide/test-monitoring-and-test-control
+
+https://www.guru99.com/how-you-can-achieve-project-goals-through-test-monitoring-control.html

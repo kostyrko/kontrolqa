@@ -1,1 +1,3 @@
 [Microservices explained in 5 minutes](https://www.youtube.com/watch?v=lL_j7ilk7rc)
+
+[Monolith ✅ vs Microservices ❌, a New Perspective](https://zhiminzhan.medium.com/monolith-vs-microservices-a-new-perspective-daffbe12eb79)

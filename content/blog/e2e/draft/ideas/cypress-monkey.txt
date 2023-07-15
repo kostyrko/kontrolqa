@@ -22,6 +22,8 @@ draft: true
 
 [Monkey testing — Let’s break things! gremlins.js + cypress.io](https://medium.com/@qa.gary.parker/monkey-testing-lets-break-things-b3e8efb63fda)
 
+[Web App Resilience: Monkey Testing With Gremlins.js And Playwrigh](https://medium.com/@kbalaji.kks/web-app-resilience-monkey-testing-with-gremlins-js-and-playwright-1a9024564053)
+
 
 🗄 [gremlins.js](https://github.com/marmelab/gremlins.js/blob/master/README.md)
 
