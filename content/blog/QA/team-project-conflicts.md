@@ -2,7 +2,8 @@
 title: '🧨 A short introduction to software quality assurance role in team conflicts 🤺'
 date: 2023-07-08 10:00
 category: qa
-draft: true
+tags: ["conflict", "conflict resolution", "communication", "quality assurance"]
+draft: false
 ---
 
 ## Introduction
