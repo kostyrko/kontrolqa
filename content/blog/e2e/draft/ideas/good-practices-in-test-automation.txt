@@ -1,1 +1,14 @@
 https://github.com/NoriSte/ui-testing-best-practices/blob/master/sections/generic-best-practices/name-test-files-wisely.md
+
+https://github.com/NoriSte/ui-testing-best-practices
+
+https://github.com/goldbergyoni/javascript-testing-best-practices
+
+https://github.com/nadvolod/testing-best-practices
+
+https://github.com/abhivaikar/howtheytest
+
+https://docs.cypress.io/guides/references/best-practices
+
+bonus: https://github.com/atinfo/awesome-test-automation/tree/master
+

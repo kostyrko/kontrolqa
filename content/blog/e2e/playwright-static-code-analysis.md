@@ -7,3 +7,5 @@ draft: true
 
 
 [](https://github.com/playwright-community/eslint-plugin-playwright)
+
+[](https://blog.logrocket.com/using-prettier-eslint-automate-formatting-fixing-javascript/)
