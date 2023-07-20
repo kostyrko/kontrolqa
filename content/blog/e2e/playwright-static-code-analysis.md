@@ -44,8 +44,43 @@ package.json
     "typescript": "^5.1.6"
   },
 ```
+---=
 
+## Husky
+1/
+npm install husky -D
 
+this
+2/ npm pkg set scripts.prepare="husky install"
+will add
+
+  "scripts": {
+    [..]
+    "prepare": "husky install"
+  },
+
+npm run prepare
+
+> clickview-playwright-poc@1.0.0 prepare
+> husky install
+
+husky - Git hooks installed
+
+3/ 
+% npx husky add .husky/pre-commit "npm run lint"
+husky - created .husky/pre-commit
+
+.husky folder with pre-commit file
+
+with content
+
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run lint
+
+4/ change to staged only files check
+npx husky add .husky/pre-commit "npx lint-staged"
 
 
 [](https://github.com/playwright-community/eslint-plugin-playwright)
@@ -55,3 +90,6 @@ https://timdeschryver.dev/blog/dont-commit-focused-tests#tslint
 https://prabinpoudel.com.np/articles/run-eslint-on-git-commit-with-husky-and-lint-staged/
 
 https://gist.github.com/estorgio/e8bcaa8e87d0fcdcf85fdf598956e34c
+
+
+https://www.npmjs.com/package/lint-staged?activeTab=readme
