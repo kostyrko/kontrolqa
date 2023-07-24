@@ -13,3 +13,5 @@
 [](https://uxplanet.org/using-chatgpt-for-user-research-5c3bdf7e26af)
 
 [](https://uxdesign.cc/please-do-not-use-chatgpt-to-generate-personas-85ffeaa6690b)
+
+[How to Convert Requirements into Test Cases: A Guide for Software Testers](https://medium.com/@case_lab/how-to-convert-requirements-into-test-cases-a-guide-for-software-testers-b9c9bbccb28d)
