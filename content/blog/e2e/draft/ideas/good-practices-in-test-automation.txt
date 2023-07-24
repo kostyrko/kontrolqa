@@ -12,3 +12,6 @@ https://docs.cypress.io/guides/references/best-practices
 
 bonus: https://github.com/atinfo/awesome-test-automation/tree/master
 
+https://medium.com/@blakenorrish/going-deeper-into-the-page-object-model-4aee634d9c98
+
+https://medium.com/@john.gluck/technical-concepts-for-automated-testers-14a43c90968
