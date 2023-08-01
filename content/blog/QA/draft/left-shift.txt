@@ -1,0 +1,1 @@
+[Shift-Left Testing: Catching Defects Early](https://medium.com/@dees3g/shift-left-testing-catching-defects-early-11396960d96e)

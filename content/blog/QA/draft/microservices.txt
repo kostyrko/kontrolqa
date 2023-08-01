@@ -1,3 +1,8 @@
 [Microservices explained in 5 minutes](https://www.youtube.com/watch?v=lL_j7ilk7rc)
 
 [Monolith ✅ vs Microservices ❌, a New Perspective](https://zhiminzhan.medium.com/monolith-vs-microservices-a-new-perspective-daffbe12eb79)
+
+[Microservices Testing Types: A Guide to Unit, Integration, Contract and End-to-End Testing](https://medium.com/@dees3g/microservices-testing-types-a-guide-to-unit-integration-contract-and-end-to-end-testing-ab56be8b94c)
+
+[How To Test Microservices Effectively](https://blog.bitsrc.io/how-to-test-microservices-effectively-bddd3bffa114)
+

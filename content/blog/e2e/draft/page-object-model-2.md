@@ -34,6 +34,9 @@ draft: true
 
 [Applying Composition to Page Object Model](https://medium.com/beargineer/applying-composition-to-page-object-model-6eb60cdbeaa9)
 
+
+[How I Use Encapsulation in My Test Automation Framework](https://medium.com/@rustamniyazov/how-i-use-encapsulation-in-my-test-automation-framework-2b0626e22fc0)
+
 YT
 
 [Inheritance vs Composition: Which is Better for Your JavaScript Project?](https://www.youtube.com/watch?v=E_BRt_fqaeA)
