@@ -1,0 +1,1 @@
+[Playwright stories: Network interception and why you may want to use it](https://medium.com/@dneprokos/playwright-stories-network-interception-and-why-you-may-want-to-use-it-48881e20cccb)
