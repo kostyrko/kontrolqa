@@ -1,0 +1,3 @@
+[Pyramid or Crab? Find a testing strategy that fits](https://web.dev/ta-strategies/)
+
+[The testing pyramid should look more like a crab](https://changelog.com/posts/the-testing-pyramid-should-look-more-like-a-crab)

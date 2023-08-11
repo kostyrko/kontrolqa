@@ -1,5 +1,5 @@
 ---
-title: 'Cypress - flaky tests'
+title: 'Flaky tests'
 date: 2022-02-21 10:00
 category: e2e
 draft: true
@@ -18,7 +18,9 @@ draft: true
 [Flaky Test Management](https://docs.cypress.io/guides/dashboard/flaky-test-management?utm_content=197506567&utm_medium=social&utm_source=twitter&hss_channel=tw-2774638535#Flake-Detection)
 
 
+[](https://drive.google.com/file/d/1D39rLYwfhptjk9ZdTHVmLG7cAf1eMP3Q/view)
 
+[Test Flakiness – Methods for identifying and dealing with flaky tests](https://engineering.atspotify.com/2019/11/test-flakiness-methods-for-identifying-and-dealing-with-flaky-tests/)
 
 
 
