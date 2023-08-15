@@ -1,12 +1,18 @@
 ---
-title: 'Playwright - static code analysis for best practices usage'
-date: 2023-07-03 10:00
+title: '🎭 Playwright: eslint + husky > guarding good practices with static pre-commit checks of static code'
+date: 2023-08-01 10:00
 category: e2e, playwright
-draft: true
+tags: ["playwright", "eslint", "lint", "husky"]
+draft: false
 ---
 
+While working with [Playwright](https://playwright.dev/)(PW) test automation framework I found myself randomly committing to the remote repo focused tests marked with `only` method. In the past i.e. while using [Cypress](https://docs.cypress.io/) I was aided a plugin which does a static code analysis catching `only` method and by that detects and stops you from committing focused tests and having that in mind > [stop-only](https://www.npmjs.com/package/stop-only) (`Detects '.only' left in the code accidentally. Works with "describe", "context" and "it".`). Although this plugin could be applied to other test automation frameworks as well, this time I was looking for a tool which would broaden the context of static test analysis and one which would have a possibility to expand with my test suite. 
 
-.eslintrc.cjs
+Options which I found suitable where 1/ using a dedicated plugin: [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) (check the list of [Supported Rules](https://github.com/playwright-community/eslint-plugin-playwright#list-of-supported-rules) - btw. Cypress also has a similar plugin [eslint-plugin-cypress#rules](https://github.com/cypress-io/eslint-plugin-cypress#rules) which strangely doesn't catch focused tests and its rule list is somewhat short) or 2/ or configuring a bare eslint for the project myself.
+
+I went with the latter for the maintenance reasons: 1/ I didn't feel the need of adding a plugin which rules I didn't need to follow at this stage 2/ I figured out it would be easier to maintain rather than rely on a third party``  
+
+``.eslintrc.cjs`
 
 ```js
 /* eslint-env node */
@@ -26,7 +32,8 @@ module.exports = {
 ````
 
 package.json
-```
+
+```js
 "scripts": {
     "eslint:check": "npx eslint .",
     "eslint:fix": "npx eslint . --fix"
@@ -35,16 +42,16 @@ package.json
 [...]
 
  "devDependencies": {
-    "@playwright/test": "^1.34.3",
-    //// nowe ////
+    [...]
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "eslint": "^8.43.0",
     "eslint-plugin-ban": "^1.6.0",
     "typescript": "^5.1.6"
-  },
+  }
 ```
----=
+
+---
 
 ## Husky
 1/
@@ -53,11 +60,12 @@ npm install husky -D
 this
 2/ npm pkg set scripts.prepare="husky install"
 will add
-
+```js
   "scripts": {
     [..]
     "prepare": "husky install"
   },
+```
 
 npm run prepare
 
@@ -83,13 +91,18 @@ npm run lint
 npx husky add .husky/pre-commit "npx lint-staged"
 
 
-[](https://github.com/playwright-community/eslint-plugin-playwright)
-
-https://timdeschryver.dev/blog/dont-commit-focused-tests#tslint
-
-https://prabinpoudel.com.np/articles/run-eslint-on-git-commit-with-husky-and-lint-staged/
-
-https://gist.github.com/estorgio/e8bcaa8e87d0fcdcf85fdf598956e34c
+[github - playwright-community/eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 
 
-https://www.npmjs.com/package/lint-staged?activeTab=readme
+[Don't commit focused tests](https://timdeschryver.dev/blog/dont-commit-focused-tests#tslint)
+
+
+[Run ESLint on git commit with Husky and Lint Staged](https://prabinpoudel.com.np/articles/run-eslint-on-git-commit-with-husky-and-lint-staged/)
+
+
+[gist - Setting up Prettier and ESLint with pre-commit hook](https://gist.github.com/estorgio/e8bcaa8e87d0fcdcf85fdf598956e34c)
+
+
+[npm: lint-staged](https://www.npmjs.com/package/lint-staged?activeTab=readme)
+
+[cypress-io/eslint-plugin-cypress](https://github.com/cypress-io/eslint-plugin-cypress)

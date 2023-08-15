@@ -1,2 +1,0 @@
-[Test Automation Design Patterns: Boosting Efficiency and Code Quality](https://medium.com/@dees3g/test-automation-design-patters-boosting-efficiency-and-code-quality-f2e036cd953e)
-
