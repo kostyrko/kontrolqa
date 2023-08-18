@@ -1,13 +1,13 @@
 ---
-title: '🌲 Cypress learning materials 🎓'
+title: '🌲 Cypress learning materials 🎓 [WiP 🚧]'
 date: 2023-08-14 10:00
 category: e2e, cypress
-tags: ["cypress", "javascript", "typescript"]
+tags: ["cypress", "javascript", "typescript", "learning materials"]
 draft: false
 ---
 
 
-On this page you will find links to materials as well as book recommendations covering the topic of test automation using Cypress
+On this page you will find a library of links to materials as well as book recommendations covering the topic of test automation using Cypress that I found worth sharing
 
 
 ## Blogs
@@ -25,7 +25,17 @@ On this page you will find links to materials as well as book recommendations co
 |----------|----------|----------|
 | Cypress.io Courses   | Gleb Bahmutov's Cypress courses, top picks:  Cypress Network Testing Exercises, Cypress Plugins   | [https://cypress.tips/courses](https://cypress.tips/courses)   |
 |[CommitQuality > Cypress](https://www.youtube.com/playlist?list=PLXgRgGX8-5UXwV_jcOx2I4pxaSMzQdLiN)| Short comprehensive and clear Cypress JS based tutorials - good for beginners|
-| Row 3    | Cell 8   | Cell 9   |
 
 
-v. 1.0 [ 2023-08-14 ]
+
+Plugins worth knowing
+| Title/Link | Description | 
+|----------|----------|
+|cypress-recurse||
+|cypress-network-idle||
+|testing-library/cypress||
+|@percy/cypress||
+
+
+
+v. 0.1 [ 2023-08-14 ]

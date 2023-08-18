@@ -1,5 +1,5 @@
 ---
-title: '🎭 Playwright learning materials 🎓'
+title: '🎭 Playwright learning materials 🎓 [WiP 🚧]'
 date: 2023-08-15 10:00
 category: e2e, playwright
 tags: ["playwright", "javascript", "c#"]
@@ -12,9 +12,22 @@ On this page you will find links to materials as well as book recommendations co
 
 ## Blogs
 
-| Title | Description | Link |
-|----------|----------|----------|
+| Title | Description |
+|----------|----------|
+|https://www.summerbud.org/dev-notes/playwright-tips-that-will-make-your-life-easier/||
+|||
+|https://www.katk.dev/playwright-config|PW config|
+|https://playwrightsolutions.com/|Playwright focused content |
+|https://timdeschryver.dev/blog?q=Playwright|Playwright focused content |
+|https://ray.run/ask|This is an AI trained to answer questions about how to use Playwright|
 
+## YT
+
+| Title | Description |
+|----------|----------|
+|https://ray.run/videos?utm_campaign=Software%2BTesting%2BWeekly&utm_medium=email&utm_source=Software_Testing_Weekly_177||
+|||
+|||
 
 
 ## Courses
@@ -31,4 +44,12 @@ On this page you will find links to materials as well as book recommendations co
 |----------|----------|
 |[PW for .NET Writing tests](https://playwright.dev/dotnet/docs/writing-tests)| Link to Playwright docs on C# and writing tests|
 
-v. 1.0 [ 2023-08-15 ]
+## Plugins
+
+| Title | Description |
+|----------|----------|
+|[eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)| static code checking for PW tests / check link for the list of rules |
+
+
+
+v. 0.1 [ 2023-08-15 ]
