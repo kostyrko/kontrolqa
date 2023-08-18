@@ -13,9 +13,9 @@ Options which I found suitable where 1/ using a dedicated plugin: [eslint-plugin
 I went with the latter for the maintenance reasons: 1/ I didn't feel the need of adding a plugin which rules I didn't need to follow at this stage 2/ I figured out it would be easier to maintain rather than relay on a third party  
 
 
-## Plugins installation
+## Eslint
 
-1. Four eslint related plugins were added during setup process
+1. Add four eslint related plugins during setup process (all will come in handy)
 
 `@typescript-eslint/eslint-plugin` / `@typescript-eslint/parser` / `eslint`
 
@@ -63,17 +63,20 @@ module.exports = {
 };
 ````
 
-Thats is - as easy as described above. Now to the second part > Husky application (pre-committ hook tool)
+That's it - as easy as described above. 
 
----
+Now to the second part > Husky application (pre-committ hook tool)
+
 
 ## Husky
-1/
+
+1/ Install husky
 npm install husky -D
 
-this
-2/ npm pkg set scripts.prepare="husky install"
-will add
+
+2/ run script in the terminal `npm pkg set scripts.prepare="husky install"` that will 
+will add/create a script in `package.json` file
+
 ```js
   "scripts": {
     [..]
@@ -81,29 +84,37 @@ will add
   },
 ```
 
-npm run prepare
+in the terminal run `npm run prepare` that will run 2 scripts
 
-> clickview-playwright-poc@1.0.0 prepare
+> <project-name>@<project-version> prepare
 > husky install
 
-husky - Git hooks installed
+which result in > husky - Git hooks installed
 
-3/ 
-% npx husky add .husky/pre-commit "npm run lint"
+3/ now we need to add pre-commit hooks, in the terminal run
+```
+npx husky add .husky/pre-commit "npm run lint"
 husky - created .husky/pre-commit
+```
+which created a  `.husky` folder in the root dir with pre-commit filewith content
 
-.husky folder with pre-commit file
-
-with content
-
+```
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
-
 npm run lint
+```
 
-4/ change to staged only files check
+4/ It is worth following with the next step and change linting check to staged files only
+by running additional command in the terminal
+
+```
 npx husky add .husky/pre-commit "npx lint-staged"
+```
 
+Voila - now while committing a change lint will run automatically through changed files.
+
+
+## Resources/Further Reading
 
 [github - playwright-community/eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 
