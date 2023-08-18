@@ -10,28 +10,20 @@ While working with [Playwright](https://playwright.dev/)(PW) test automation fra
 
 Options which I found suitable where 1/ using a dedicated plugin: [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) (check the list of [Supported Rules](https://github.com/playwright-community/eslint-plugin-playwright#list-of-supported-rules) - btw. Cypress also has a similar plugin [eslint-plugin-cypress#rules](https://github.com/cypress-io/eslint-plugin-cypress#rules) which strangely doesn't catch focused tests and its rule list is somewhat short) or 2/ or configuring a bare eslint for the project myself.
 
-I went with the latter for the maintenance reasons: 1/ I didn't feel the need of adding a plugin which rules I didn't need to follow at this stage 2/ I figured out it would be easier to maintain rather than rely on a third party``  
+I went with the latter for the maintenance reasons: 1/ I didn't feel the need of adding a plugin which rules I didn't need to follow at this stage 2/ I figured out it would be easier to maintain rather than relay on a third party  
 
-``.eslintrc.cjs`
 
-```js
-/* eslint-env node */
-module.exports = {
-    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
-    parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint', 'ban'],
-    root: true,
-    rules: {
-        "ban/ban": [
-            2,
-            { "name": ["describe", "only"], "message": "don't focus tests" },
-            { "name": ["test", "only"], "message": "don't focus tests" },
-        ]
-    }
-};
-````
+## Plugins installation
 
-package.json
+1. Four eslint related plugins were added during setup process
+
+`@typescript-eslint/eslint-plugin` / `@typescript-eslint/parser` / `eslint`
+
+and `eslint-plugin-ban`
+
+as well as additional script to run `eslint` `check` and automatic `fix` locally 
+
+`package.json`
 
 ```js
 "scripts": {
@@ -50,6 +42,28 @@ package.json
     "typescript": "^5.1.6"
   }
 ```
+
+
+2. create `.eslintrc.cjs` file and in the rules section add bans that you would like to apply
+
+```js
+/* eslint-env node */
+module.exports = {
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint', 'ban'],
+    root: true,
+    rules: {
+        "ban/ban": [
+            2,
+            { "name": ["describe", "only"], "message": "don't focus tests" },
+            { "name": ["test", "only"], "message": "don't focus tests" },
+        ]
+    }
+};
+````
+
+Thats is - as easy as described above. Now to the second part > Husky application (pre-committ hook tool)
 
 ---
 
