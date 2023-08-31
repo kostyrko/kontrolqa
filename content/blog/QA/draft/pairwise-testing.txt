@@ -1,4 +1,5 @@
-app [https://pairwise.teremokgames.com/4s8/]
+app1 [https://pairwise.teremokgames.com/4s8/]
+app2 [https://pairwise.yuuniworks.com/]
 
 [](https://testerzy.pl/baza-wiedzy/pairwise-testing-projektowanie-przypadkow-testowych-i-testy-konfiguracji-metoda-redukcji-par-danych-wejsciowych)
 [](https://www.softwaretestinghelp.com/what-is-pairwise-testing/)

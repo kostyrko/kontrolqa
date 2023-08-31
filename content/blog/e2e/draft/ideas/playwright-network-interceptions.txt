@@ -1,0 +1,5 @@
+[Playwright stories: Network interception and why you may want to use it](https://medium.com/@dneprokos/playwright-stories-network-interception-and-why-you-may-want-to-use-it-48881e20cccb)
+
+[Playwright Network Insights: How to Intercept, Modify, Delete and Analyze network calls.](https://medium.com/@kbalaji.kks/playwright-network-insights-how-to-intercept-modify-delete-and-analyze-network-calls-cde402f103e6)
+
+[Mock APIs](https://playwright.dev/docs/mock)

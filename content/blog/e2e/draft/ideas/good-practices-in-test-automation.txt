@@ -1,1 +1,19 @@
 https://github.com/NoriSte/ui-testing-best-practices/blob/master/sections/generic-best-practices/name-test-files-wisely.md
+
+https://github.com/NoriSte/ui-testing-best-practices
+
+https://github.com/goldbergyoni/javascript-testing-best-practices
+
+https://github.com/nadvolod/testing-best-practices
+
+https://github.com/abhivaikar/howtheytest
+
+https://docs.cypress.io/guides/references/best-practices
+
+bonus: https://github.com/atinfo/awesome-test-automation/tree/master
+
+https://medium.com/@blakenorrish/going-deeper-into-the-page-object-model-4aee634d9c98
+
+https://medium.com/@john.gluck/technical-concepts-for-automated-testers-14a43c90968
+
+https://javascript.plainenglish.io/how-to-prioritize-test-cases-in-end-to-end-testing-3e9282a2466c
