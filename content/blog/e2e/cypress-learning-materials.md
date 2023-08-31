@@ -24,11 +24,12 @@ On this page you will find a library of links to materials as well as book recom
 | Title | Description | Link |
 |----------|----------|----------|
 | Cypress.io Courses   | Gleb Bahmutov's Cypress courses, top picks:  Cypress Network Testing Exercises, Cypress Plugins   | [https://cypress.tips/courses](https://cypress.tips/courses)   |
-|[CommitQuality > Cypress](https://www.youtube.com/playlist?list=PLXgRgGX8-5UXwV_jcOx2I4pxaSMzQdLiN)| Short comprehensive and clear Cypress JS based tutorials - good for beginners|
+|CommitQuality > Cypress| Short comprehensive and clear Cypress JS based tutorials - good for beginners|[YT: Cypress](https://www.youtube.com/playlist?list=PLXgRgGX8-5UXwV_jcOx2I4pxaSMzQdLiN)|
 
 
 
-Plugins worth knowing
+## Plugins worth knowing
+
 | Title/Link | Description | 
 |----------|----------|
 |cypress-recurse||

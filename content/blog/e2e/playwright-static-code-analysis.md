@@ -6,13 +6,25 @@ tags: ["playwright", "eslint", "lint", "husky"]
 draft: false
 ---
 
-While working with [Playwright](https://playwright.dev/)(PW) test automation framework I found myself randomly committing to the remote repo focused tests marked with `only` method. In the past i.e. while using [Cypress](https://docs.cypress.io/) I was aided a plugin which does a static code analysis catching `only` method and by that detects and stops you from committing focused tests and having that in mind > [stop-only](https://www.npmjs.com/package/stop-only) (`Detects '.only' left in the code accidentally. Works with "describe", "context" and "it".`). Although this plugin could be applied to other test automation frameworks as well, this time I was looking for a tool which would broaden the context of static test analysis and one which would have a possibility to expand with my test suite. 
+While working with [Playwright](https://playwright.dev/) test automation framework I found myself randomly committing to the remote repo focused tests marked with `only` method. In the past i.e. while using [Cypress](https://docs.cypress.io/) I was aided a plugin which does a static code analysis catching `only` method and stops you from committing focused tests > check out this plugin here: [stop-only](https://www.npmjs.com/package/stop-only)
+  >"Detects '.only' left in the code accidentally. Works with "describe", "context" and "it".
 
-Options which I found suitable where 1/ using a dedicated plugin: [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) (check the list of [Supported Rules](https://github.com/playwright-community/eslint-plugin-playwright#list-of-supported-rules) - btw. Cypress also has a similar plugin [eslint-plugin-cypress#rules](https://github.com/cypress-io/eslint-plugin-cypress#rules) which strangely doesn't catch focused tests and its rule list is somewhat short) or 2/ or configuring a bare eslint for the project myself.
+Although this plugin could be applied to other test automation frameworks as well, this time I was looking for a tool which would broaden the context of static test analysis and one which would have a possibility to expand with my test suite. 
 
-I went with the latter for the maintenance reasons: 1/ I didn't feel the need of adding a plugin which rules I didn't need to follow at this stage 2/ I figured out it would be easier to maintain rather than relay on a third party  
+Options which I found suitable where 
+
+1/ using a dedicated plugin: [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright) (check the list of [Supported Rules](https://github.com/playwright-community/eslint-plugin-playwright#list-of-supported-rules) - btw. Cypress also has a similar plugin [eslint-plugin-cypress#rules](https://github.com/cypress-io/eslint-plugin-cypress#rules) which strangely doesn't catch focused tests and its rule list is somewhat short) 
+
+2/ or configuring a bare eslint for the project myself
+
+I went with the latter for the maintenance reasons: 
+
+1/ I didn't feel the need of adding a plugin which rules I didn't need to follow at this stage 
+
+2/ I figured out it would be easier to maintain rather than relay on a third party  
 
 
+the recipe to implement it is as follows: 
 ## Eslint
 
 1. Add four eslint related plugins during setup process (all will come in handy)
@@ -21,9 +33,7 @@ I went with the latter for the maintenance reasons: 1/ I didn't feel the need of
 
 and `eslint-plugin-ban`
 
-as well as additional script to run `eslint` `check` and automatic `fix` locally 
-
-`package.json`
+as well as additional script to run `eslint` `check` and automatic `fix` locally to your `package.json` file
 
 ```js
 "scripts": {
@@ -111,7 +121,7 @@ by running additional command in the terminal
 npx husky add .husky/pre-commit "npx lint-staged"
 ```
 
-Voila - now while committing a change lint will run automatically through changed files.
+Voilà - now while committing a change lint will run automatically through changed files.
 
 
 ## Resources/Further Reading

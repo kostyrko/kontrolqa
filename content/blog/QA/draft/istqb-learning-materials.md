@@ -3,7 +3,7 @@ title: 'ISTQB foundation level certification learning materials 🎓 [WiP 🚧]'
 date: 2023-08-02 10:00
 category: certifications
 tags: ["ISTQB", "foundation level", "learning materials"]
-draft: false
+draft: true
 ---
 
 Learning Scope: 
