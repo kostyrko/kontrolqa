@@ -1,7 +1,7 @@
 ---
 title: ' Test automation learning materials 🎓 [WiP 🚧]'
 date: 2023-08-18 10:00
-category: e2e, playwright
+category: e2e
 tags: ["test automation", "learning materials", "books"]
 draft: false
 ---

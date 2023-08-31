@@ -1,7 +1,7 @@
 ---
 title: '🌲 Cypress - fixtures'
 date: 2022-02-15 17:00
-category: e2e
+category: cypress
 thumbnail: { thumbnailSrc }
 draft: false
 lang: 'en'

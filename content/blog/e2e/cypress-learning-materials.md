@@ -1,7 +1,7 @@
 ---
 title: '🌲 Cypress learning materials 🎓 [WiP 🚧]'
 date: 2023-08-14 10:00
-category: e2e, cypress
+category: cypress
 tags: ["cypress", "javascript", "typescript", "learning materials"]
 draft: false
 ---

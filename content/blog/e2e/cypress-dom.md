@@ -1,7 +1,7 @@
 ---
 title: '🌲 Cypress - traversing the DOM tree 🌳'
 date: 2022-01-30 12:00
-category: e2e
+category: cypress
 draft: false
 lang: 'en'
 tags: ["cypress", "test automation", "e2e", "dom"]

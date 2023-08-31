@@ -1,7 +1,7 @@
 ---
 title: '🎭 Playwright learning materials 🎓 [WiP 🚧]'
 date: 2023-08-15 10:00
-category: e2e, playwright
+category: playwright
 tags: ["playwright", "javascript", "c#"]
 draft: false
 ---

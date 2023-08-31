@@ -1,7 +1,7 @@
 ---
 title: '🌲 Cypress plugins 🦾'
 date: 2023-08-13 10:00
-category: e2e, cypress
+category: cypress
 tags: ["cypress", "javascript", "typescript", "plugins"]
 draft: false
 ---

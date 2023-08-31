@@ -1,7 +1,7 @@
 ---
 title: '🎭 Playwright: eslint + husky > guarding good practices with static pre-commit checks of static code'
 date: 2023-08-01 10:00
-category: e2e, playwright
+category: playwright
 tags: ["playwright", "eslint", "lint", "husky"]
 draft: false
 ---
