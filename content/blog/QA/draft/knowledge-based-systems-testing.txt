@@ -1,0 +1,4 @@
+[Wittgenstein and the Semantic Gap: From Functional Requirements to Test Strategies of Knowledge-Based Systems](https://medium.com/philosophical-bytes/wittgenstein-and-the-semantic-gap-10eec55a2793)
+[Observe Meaning and specify Software Behaviour: From Functional Requirements to Test Strategies of Knowledge-Based Systems]()
+[Testing Language Models With The Philosophy of Wittgenstein](https://www.ministryoftesting.com/articles/ca67a167)
+[Wittgenstein’s Beetle: Here's What Software And Pain Have In Common](https://fagnerbrack.com/wittgenstein-s-beetle-in-software-engineering-dcea89a5db92)

@@ -17,9 +17,14 @@ Data Driven Testing
 
 Behavior Driven Testing
 
+## Test Automation
 
 Scripting/programming - good practices acronyms
+
+Test Automation Pyramid
 
 KISS
 
 YAGIN
+
+[](https://testwithnishi.com/2023/07/24/agile-testing-strategies-for-successful-software-development/)

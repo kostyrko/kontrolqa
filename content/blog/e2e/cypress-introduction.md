@@ -1,7 +1,7 @@
 ---
 title: '🌲 Cypress - introduction'
 date: 2022-01-09 12:00
-category: e2e
+category: cypress
 tags: ["cypress", "test automation", "e2e", "mocha", "chai"]
 draft: false
 lang: 'en'

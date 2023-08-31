@@ -1,7 +1,7 @@
 ---
 title: '🌲 Cypress - custom Commands'
 date: 2022-01-29 13:00
-category: e2e
+category: cypress
 draft: false
 lang: 'en'
 tags: ["cypress", "test automation", "e2e", "mocha", "chai"]

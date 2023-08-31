@@ -1,7 +1,7 @@
 ---
 title: '🌲 Cypress - Page Object Model a short introduction'
 date: 2022-02-16 10:00
-category: e2e
+category: cypress
 draft: false
 tags: ["cypress", "test automation", "e2e", "pom"]
 
