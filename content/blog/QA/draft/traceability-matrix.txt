@@ -1,0 +1,1 @@
+[Requirements traceability matrix: the map to testing use cases](https://medium.com/justinmind/requirements-traceability-matrix-the-map-to-testing-use-cases-24d43866c28c)
