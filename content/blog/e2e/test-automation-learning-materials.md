@@ -27,7 +27,7 @@ On this page you will find links to materials as well as book recommendations co
 
 | Title/Link | Description |
 |----------|----------|----------|
-|[Going Deeper into the Page Object Model: Twelve design considerations when implementing page objects](https://medium.com/@blakenorrish/going-deeper-into-the-page-object-model-4aee634d9c98)| **Mentioned topics:** > Page Objects as a Design Pattern  >Imperative vs Declarative Page Object Interfaces > Actor / Orchestrator Layer > Static vs Instance Methods — Chaining Page Object Calls > The Debate on Assertion Location > Page Objects vs Page Components > Page Objects and Inheritance > Interface Reusability — Separation What vs How > Centralized Locator Class vs Page Object Locators > DRY vs DAMP — BeforeEach and BeforeAll > Coupling in Page Object Interfaces > ScreenPlay and other Page Object Alternatives|
+|[Going Deeper into the Page Object Model: Twelve design considerations when implementing page objects](https://medium.com/@blakenorrish/going-deeper-into-the-page-object-model-4aee634d9c98)| **Mentioned topics:** > Page Objects as a Design Pattern > Imperative vs Declarative Page Object Interfaces > Actor / Orchestrator Layer > Static vs Instance Methods — Chaining Page Object Calls > The Debate on Assertion Location > Page Objects vs Page Components > Page Objects and Inheritance > Interface Reusability — Separation What vs How > Centralized Locator Class vs Page Object Locators > DRY vs DAMP — BeforeEach and BeforeAll > Coupling in Page Object Interfaces > ScreenPlay and other Page Object Alternatives|
 
 ## Articles: Design Patterns
 
