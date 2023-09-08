@@ -1,5 +1,5 @@
 ---
-title: 'Beyond page object model'
+title: 'Against page object model'
 date: 2023-07-03 10:00
 category: e2e
 draft: true

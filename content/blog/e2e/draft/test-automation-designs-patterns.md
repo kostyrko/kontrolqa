@@ -1,3 +1,10 @@
+---
+title: 'Test automation design patterns - introduction'
+date: 2023-08-03 10:00
+category: e2e
+draft: true
+---
+
 Page Object Model Design Pattern
 Composite patterns
 Factory Design Pattern
