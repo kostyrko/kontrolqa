@@ -1,0 +1,3 @@
+[Improve maintainability in Playwright scripts with test data JSON](https://medium.com/@tpshadinijk/improve-maintainability-in-playwright-scripts-with-test-data-json-ec3ffc8174e5)
+
+[The Definitive Guide to API Test Automation With Playwright: Part 6 - Creating a DataFactory to Manage Test Data](https://playwrightsolutions.com/the-definitive-guide-to-api-testcreating-a-datafactory-to-manage-test-data/)
