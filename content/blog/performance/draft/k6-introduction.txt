@@ -167,3 +167,4 @@ teardown - zamykanie po każdym teście
 
 [Rendezvous with k6](https://k6.io/blog/rendezvous-with-k6/?utm_campaign=Software%2BTesting%2BWeekly&utm_medium=email&utm_source=Software_Testing_Weekly_127)
 
+[Performance Test with k6](https://medium.com/@indraaristya/performance-test-with-k6-d9ff750c6414)

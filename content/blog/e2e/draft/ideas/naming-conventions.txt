@@ -1,1 +1,7 @@
 https://github.com/NoriSte/ui-testing-best-practices/blob/master/sections/generic-best-practices/name-test-files-wisely.md
+
+[Test organization and naming](https://www.innoq.com/en/blog/2021/07/tests-organization-and-naming/)
+
+[Writing Clean Tests - Naming Matters](https://www.petrikainulainen.net/programming/testing/writing-clean-tests-naming-matters/)
+
+[Naming convention](https://infinum.com/handbook/qa/automation/general/naming-convention)
