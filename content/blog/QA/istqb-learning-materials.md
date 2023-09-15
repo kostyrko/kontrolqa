@@ -3,7 +3,7 @@ title: 'ISTQB foundation level certification learning materials 🎓 [WiP 🚧]'
 date: 2023-09-01 10:00
 category: certifications
 tags: ["ISTQB", "foundation level", "learning materials"]
-draft: true
+draft: false
 ---
 
 
@@ -12,9 +12,9 @@ On this page you will find links to the materials covering topic of ISTQB founda
 Basics source: [Certified Tester Foundation Level - www.istqb.org](https://www.istqb.org/certifications/certified-tester-foundation-level#:~:text=Syllabus-,ISTQB,-CTFL%20Syllabus%20v4.0) - here you will be able to find Syllabus and Sample Exams)
 
 
-additional learning resources:
+Additional learning resources:
 
-Materials sharing learning journey - good for intro:
+## Materials sharing learning journey (good for intro):
 
 | Title/Link | Description | 
 |----------|----------|
@@ -23,7 +23,7 @@ Materials sharing learning journey - good for intro:
 |[medium.com - How to prepare for and pass ISTQB certification: My experience: Olha Kutniv](https://medium.com/agileinsider/how-to-prepare-for-and-pass-istqb-certification-my-experience-94b127ccfebc)| Tips / Resources |
 
 
-Udemy courses:
+## Udemy courses:
 
 | Title/Link | Description | 
 |----------|----------|
@@ -31,14 +31,14 @@ Udemy courses:
 |[Udemy - ISTQB Certified Tester Foundation Level Training (CTFL)](https://www.udemy.com/course/istqb-certified-tester-foundation-level-training-ctfl/)| 🤑 Free |
 
 
-Books worth consideration:
+## Books worth reading:
 
 | Title/Link | Description | 
 |----------|----------|
 |  [FOUNDATIONS OF SOFTWARE TESTING ISTQB CERTIFICATION Graham et al](https://archive.org/details/FoundationsOfSoftwareTestingISTQBCertificationBYDorothyGrahamErikVanVeenendaalIsabelEvansRexBlack/page/n1/mode/2up) | Foundations Of Software Testing ISTQB Certification BY Dorothy Graham, Erik Van Veenendaal, Isabel Evans & Rex Black - book adopts a practical, hands-on approach, covering the fundamental topics that every system and software tester should know | 
 
 
-Test mocks:
+## Test mocks:
 
 | Title/Link | Description | 
 |----------|----------|

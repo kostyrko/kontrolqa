@@ -6,7 +6,9 @@ draft: true
 tags: ["Screenplay pattern", "Journey pattern"]
 ---
 
+"The main reason to consider an alternative is that the Page Object Model forces the quality engineer to think in terms of “pages” rather than the actual behavior of the application. The primary interest of our tests should be the interaction of the application, the secondary is the implementation."
 
+"Instead, we are provided with an actor that plays a specific role. In this role, the actor will try to achieve a goal by performing certain tasks."
 
 [serenity-js.org - Screenplay Pattern](https://serenity-js.org/handbook/design/screenplay-pattern/)
 
