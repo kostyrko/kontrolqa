@@ -1,8 +1,8 @@
 ---
-title: '🎭 Elevating Test Clarity with Custom Expect Messages and your own assertion methods in Playwright'
+title: '🎭 Elevating Test Clarity with Custom Expect Messages and your own Matchers in Playwright'
 date: 2023-09-02 10:00
 category: playwright
-tags: ["playwright", "javascript", "typescript", "assertion"]
+tags: ["playwright", "javascript", "typescript", "assertion", "matcher"]
 draft: false
 ---
 
@@ -98,17 +98,13 @@ expect(testValue).toBeOneOfValues(validValues);
 
 If `testValue` doesn't match any of the values in `validValues`, your custom error message will offer comprehensive information about the failure.
 
+
 ## Conclusion
 
 Custom expect messages and matchers in Playwright are formidable instruments for enhancing the readability and expressiveness of your test scripts. By designing custom matchers that align precisely with your test requirements, you can make your code more intuitive and self-explanatory.
 
-As you navigate the world of Playwright, recognize the value of custom expectations and how they can transform your tests into understandable, maintainable assets. With the freedom to create custom matchers, you have the means to shape your expectations to match your precise intentions.
 
-In conclusion, crafting code that reads like a finely crafted novel not only makes your tests a joy to work with but also elevates collaboration and secures the long-term success of your test automation endeavors.
-
----
-
-By incorporating custom expect messages and matchers into your Playwright test automation, you can significantly enhance the clarity and readability of your test scripts, making them more accessible to your team and future maintainers.
+By incorporating custom expect messages and matchers into your Playwright test automation, you can significantly enhance the clarity and readability of your test scripts, making them more accessible to your team and future maintainers you can share your creations with others as well i.e. check out a Matchers library created by Yevhen Laichenkov called [playwright-expect](https://github.com/elaichenkov/playwright-expect)  / now archived probably due to similarity with the matchers which are a part of Playwright library
 
 
 [Playwright Custom Expect Message](https://www.programsbuzz.com/article/playwright-custom-expect-message)
@@ -118,3 +114,5 @@ By incorporating custom expect messages and matchers into your Playwright test a
 [Assertion Scopes, the one FluentAssertions feature you didn't know you needed](https://timdeschryver.dev/blog/assertion-scopes-the-one-fluentassertions-feature-you-didnt-know-you-needed)
 
 [GenericAssertions](https://playwright.dev/docs/api/class-genericassertions)
+
+[Expect more with playwright-expect](https://elaichenkov.medium.com/expect-more-with-playwright-expect-5eb4e23d3916)
