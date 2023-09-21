@@ -14,12 +14,14 @@ On this page you will find links to the materials covering topic of prompting
 |----------|----------|
 |[OpenAI Platform](https://platform.openai.com/docs/guides/gpt-best-practices)   |  OpenAPI docs - GPT best practices |
 
-## Prompt Engineering Guides
+## Prompt Engineering Guides and articles
 
 | Title/Link | Description |
 |----------|----------|
 |[Prompt Engineering Guide](https://www.promptingguide.ai/)   |  Prompt Engineering Guide – Nextra |
 |[Prompt Engineering Guide](https://learnprompting.org/docs/intro)|Learn Prompting: Your Guide to Communicating with AI|
+|[Advanced Prompt Engineering What to do when few-shot learning isn’t enough…](https://towardsdatascience.com/advanced-prompt-engineering-f07f9e55fe01)|
+Cameron R. Wolfe|
 
 ## Prompt Construction Methodologies
 
