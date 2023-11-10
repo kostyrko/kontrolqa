@@ -227,3 +227,7 @@ API test automation
 [How ChatGPT Write Code for Automation tool Cypress](https://kailash-pathak.medium.com/how-chatgpt-generate-code-for-automation-tool-cypress-79859f499a1e)
 
 [Turbocharge Playwright with ChatGPT for Productivity](https://ceroshjacob.medium.com/turbocharge-playwright-with-chatgpt-for-productivity-54f9b7ddec15)
+
+BDD and ChatGPT
+
+[Generate BDD tests with ChatGPT and run them with Playwright](https://dev.to/vitalets/generate-bdd-tests-with-chatgpt-and-run-them-with-playwright-4ffm?utm_campaign=Software%2BTesting%2BWeekly&utm_medium=email&utm_source=Software_Testing_Weekly_187)
