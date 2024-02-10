@@ -1,5 +1,5 @@
 ---
-title: '🤖🧠 Prompting learning materials 🎓 [WiP 🚧]'
+title: '🤖🧠 Prompting learning materials 🎓'
 date: 2023-08-16 10:00
 category: AI
 tags: ["ai", "chatgpt", "prompting"]

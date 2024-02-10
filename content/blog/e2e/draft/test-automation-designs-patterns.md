@@ -1,6 +1,6 @@
 ---
 title: 'Test automation design patterns - introduction'
-date: 2023-08-03 10:00
+date: 202-08-03 10:00
 category: e2e
 draft: true
 ---
