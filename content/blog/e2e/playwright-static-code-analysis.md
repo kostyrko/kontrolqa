@@ -1,5 +1,5 @@
 ---
-title: '🎭 Playwright: eslint + husky > guarding good practices with static pre-commit checks of static code'
+title: '🎭 Playwright: eslint + husky > guarding good practices with static pre-commit checks'
 date: 2023-08-01 10:00
 category: playwright
 tags: ["playwright", "eslint", "lint", "husky"]

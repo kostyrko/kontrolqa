@@ -28,8 +28,6 @@ On this page you will find links to materials as well as book recommendations co
 |[Playwright Videos](https://ray.run/videos?utm_campaign=Software%2BTesting%2BWeekly&utm_medium=email&utm_source=Software_Testing_Weekly_177)||
 
 
-
-
 ## Courses
 
 | Title/Link | Description | 
@@ -44,6 +42,17 @@ On this page you will find links to materials as well as book recommendations co
 | Title | Description |
 |----------|----------|
 |[eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)| static code checking for PW tests / check link for the list of rules |
+|[expected-condition-playwright](https://github.com/elaichenkov/expected-condition-playwright)|expected-condition-playwright is a Node.js library for Playwright and Puppeteer that supplies a set of common conditions that provides functionalities to wait for certain conditions till a defined task is complete|
+|[playwright-bdd](https://github.com/vitalets/playwright-bdd)|BDD testing with Playwright runner|
+|[playwright-watch](https://github.com/iamyoki/playwright-watch) + [deploysentinel/playwright-watch](https://www.npmjs.com/package/@deploysentinel/playwright-watch)|Visual watch mode for Playwright. Run and visually debug Playwright tests as soon as you hit save.|
+
+## Repositories
+| Title | Description |
+|----------|----------|
+|[Awesome Playwright](https://github.com/mxschmitt/awesome-playwright)|A curated list of awesome tools, utils and projects using Playwright|
+|[Playwright Solutions](https://github.com/playwrightsolutions)|Repo with PW examples|
+
+|||
 
 ## Thematic articles
 

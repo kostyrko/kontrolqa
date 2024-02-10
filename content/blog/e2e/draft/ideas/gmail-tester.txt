@@ -1,0 +1,1 @@
+[Email verification with gmail-tester and Playwright](https://medium.com/@qa.gary.parker/email-verification-with-gmail-tester-and-playwright-1e0ac1dbc2e8)

@@ -28,7 +28,7 @@ On this page you will find a library of links to materials as well as book recom
 
 
 
-## Plugins worth knowing
+## Plugins worth noticing
 
 | Title/Link | Description | 
 |----------|----------|
